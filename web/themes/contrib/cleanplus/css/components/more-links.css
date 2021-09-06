@@ -1,0 +1,9 @@
+/**
+ * @file
+ * Visual styles for Clean+'s more links.
+ */
+.more-link {
+  text-align: center;
+  margin-top: 20px;
+  clear: both;
+}

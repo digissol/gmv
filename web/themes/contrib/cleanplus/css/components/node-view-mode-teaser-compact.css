@@ -1,0 +1,50 @@
+/**
+ * @file
+ * Visual styles for Clean+'s node in teaser compact view.
+ */
+.node--view-mode-mt-teaser-compact .teaser-compact-image {
+  margin-right: 20px;
+  max-width: 80px;
+}
+.node--view-mode-mt-teaser-compact .node__title {
+  margin-bottom: 15px;
+}
+.region--default-background .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-default-contrast);
+}
+.region--bright-background .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-bright-contrast);
+}
+.region--pattern .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-pattern-contrast);
+}
+.region--accent-background .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-accent-contrast);
+}
+.region--tint-background .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-tint-contrast);
+}
+.region--shade-background .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-shade-contrast);
+}
+.region--colored-background .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background .node--view-mode-mt-teaser-compact .node__title a {
+  color: var(--mt-color-dark-contrast);
+}
+.node--view-mode-mt-teaser-compact .node__content {
+  margin-bottom: 10px;
+}
+.node--view-mode-mt-teaser-compact .node__content .field.field--name-field-mt-prd-body {
+  margin-bottom: 0px;
+}
+@media (max-width: 767px) {
+  .footer__section .node--view-mode-mt-teaser-compact,
+  .footer-bottom__section .node--view-mode-mt-teaser-compact {
+    text-align: left;
+  }
+}

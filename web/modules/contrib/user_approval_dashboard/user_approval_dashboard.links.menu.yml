@@ -1,0 +1,6 @@
+user_approval_dashboard.dashboard:
+  title: Dashboard
+  description: 'Manage User Access.'
+  route_name: view.dashboard.user_dashboard
+  parent: system.admin
+  weight: -15

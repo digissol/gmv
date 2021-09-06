@@ -1,0 +1,11 @@
+elogger-jsonpanel:
+  version: 1.x
+  css:
+    theme:
+      jsonpanel/css/jsonpanel.css: {}
+  js:
+    jsonpanel/js/Autolinker.js: {}
+    jsonpanel/js/jsonpanel.js: {}
+    jsonpanel/js/main.js: {}
+  dependencies:
+    - core/jquery

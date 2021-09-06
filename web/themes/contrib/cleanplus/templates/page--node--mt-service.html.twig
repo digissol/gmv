@@ -1,0 +1,45 @@
+{#
+/**
+ * @file
+ * Clean+'s theme implementation to display internal banner slider of Service node.
+ */
+#}
+
+{% extends "page.html.twig" %}
+{% block internal_banner %}
+  {% if mt_srv_internal_banner|render or page.hero_top %}
+    {{ attach_library('cleanplus/banner-area') }}
+    <div class="internal-banner-container {{(mt_srv_internal_banner|render) ? 'internal-banner-container--fullscreen region--colored-background' : hero_top_background_color}}">
+      {% if mt_srv_internal_banner|render %}
+        {{ mt_srv_internal_banner }}
+      {% endif %}
+      {% if page.hero_top %}
+        <div {% if hero_top_id %}id="{{ hero_top_id }}"{% endif %} class="clearfix hero-top d-flex align-items-end {{ (hero_top_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (hero_top_region_paddings) ? ' region--no-paddings' : '' }}">
+          <div class="internal-banner d-flex align-items-end {{(mt_srv_internal_banner|render) ? '' : 'internal-banner--plain' }}">
+          {# hero-top #}
+            <div class="{{ hero_top_layout_container }}">
+              {# hero-top__container #}
+              <div class="clearfix hero-top__container{{ (hero_top_animations == "enabled") ? ' mt-no-opacity' : '' }}"
+                {% if hero_top_animations == "enabled" %}
+                  data-animate-effect="{{ hero_top_animation_effect }}"
+                {% endif %}>
+                <div class="row align-items-end">
+                  <div class="{{ (mt_srv_link|render) ? 'col-lg-8 col-12 mb-lg-0 mb-4' : 'col-12'  }}">
+                    <div class="hero-top__section">
+                      {{ page.hero_top }}
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    {{ mt_srv_link }}
+                  </div>
+                </div>
+              </div>
+              {# EOF:hero-top__container #}
+            </div>
+          </div>
+          {# EOF: hero-top #}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,44 @@
+a {
+  &.button {
+    @extend .btn;
+
+    &.button--danger {
+      @include button-variant($danger, $danger);
+    }
+
+    &.button-action {
+      @include button-variant($info, $info);
+    }
+  }
+}
+
+// @todo - all div a should be updated in b5 theme for drupal
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    a {
+      color: color-contrast($value);
+
+      &:hover {
+        color: color-contrast($value);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-#{$color} {
+    &:hover {
+      a {
+        color: color-contrast($value);
+      }
+    }
+
+    a {
+      &:hover {
+        color: color-contrast($value);
+        text-decoration: none;
+      }
+    }
+  }
+}

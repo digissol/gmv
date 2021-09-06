@@ -1,0 +1,28 @@
+{#
+/**
+ * @file
+ * Clean+'s theme implementation to display a Testimonial node in teaser tile text view mode.
+ */
+#}
+{% set teaser_tile_text_precontent = content.field_mt_tst_testimonial_image %}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    display_submitted ? 'node--display-submitted',
+    teaser_tile_text_precontent ? 'precontent-enabled',
+    'clearfix',
+  ]
+%}
+{{ attach_library('cleanplus/node-view-mode-teaser-tile-text') }}
+{% set teaser_tile_text_content = content.field_mt_tst_body %}
+{% set teaser_tile_text_footer = content.field_mt_tst_subtitle %}
+{% if content.field_mt_tst_testimonial_link|render %}
+  {% set url = node.field_mt_tst_testimonial_link.0.url %}
+{% endif %}
+{% set rendered_content = content|without('field_mt_tst_testimonial_image', 'field_mt_tst_body', 'field_mt_tst_subtitle', 'field_mt_tst_testimonial_link') %}
+{% include '@cleanplus/partials/_mt-teaser-tile-text-2.html.twig' %}

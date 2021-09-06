@@ -1,0 +1,42 @@
+# Event log - Entity routes.
+elogger.elog_settings:
+  path: 'admin/structure/elog'
+  defaults:
+    _form: '\Drupal\elogger\Form\ElogSettingsForm'
+    _title: 'Event log entity - Settings'
+  requirements:
+    _permission: 'administer event log entity'
+
+# Canonical.
+entity.elog.canonical:
+  path: '/admin/reports/elogger/elog/{elog}'
+  defaults:
+    _entity_view: 'elog'
+    _title: 'View - Event log'
+  requirements:
+    _entity_access: 'elog.view'
+
+entity.elog.delete_form:
+  path: '/admin/reports/elogger/elog/{elog}/delete'
+  defaults:
+    _entity_form: elog.delete
+    _title: 'Delete - Event log'
+  requirements:
+    _entity_access: 'elog.delete'
+
+# Configuration management routes.
+elogger.system:
+  path: '/admin/config/system/elogger'
+  defaults:
+    _form: '\Drupal\elogger\Form\ElogFiltersConfigForm'
+    _title: 'Elogger: Filter Configurations'
+  requirements:
+    _permission: 'administer elogger configurations'
+
+elogger.system.log_messages:
+  path: '/admin/config/system/elogger/log-messages'
+  defaults:
+    _form: '\Drupal\elogger\Form\ElogLogMessagesConfigForm'
+    _title: 'Elogger: Log Messages Configurations'
+  requirements:
+    _permission: 'administer elogger configurations'

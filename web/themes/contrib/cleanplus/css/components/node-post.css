@@ -1,0 +1,162 @@
+/**
+ * @file
+ * Visual styles for Clean+'s post content type.
+ */
+
+/* field */
+.node--type-mt-post.node--view-mode-full .field {
+  margin-bottom: 40px;
+}
+
+/* Node header */
+.node--type-mt-post .node__header {
+  margin-bottom: 0;
+}
+
+/* post header */
+.page-node-type-mt-post .list-inline-item:not(:last-child) {
+  margin-right: 1rem;
+}
+.page-node-type-mt-post .node__header .field--name-user-picture {
+  margin-bottom: 0;
+}
+
+/* node side */
+.node--type-mt-post.node--view-mode-full .node__side {
+  text-align: center;
+}
+.node--type-mt-post.node--view-mode-full .node__side .field--name-user-picture {
+  max-width: 65px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+  margin-bottom: 10px;
+}
+.node--type-mt-post.node--view-mode-full .node__side .username,
+.node--type-mt-post.node--view-mode-full .node__side .node-author span span {
+  font-weight: 700;
+  font-size: 18px;
+}
+.node--type-mt-post.node--view-mode-full .node__side .field--name-user-picture img {
+  border-radius: 100%;
+}
+
+/*node links*/
+.node--type-mt-post.node--view-mode-full .node__links {
+  margin-bottom: 20px;
+}
+
+/* post layout */
+@media (min-width: 768px) {
+  .node--type-mt-post.node--view-mode-full .node__container {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .node--type-mt-post.node--view-mode-full .node__main-content {
+    -ms-flex: 0 0 75%;
+    flex: 0 0 75%;
+    max-width: 75%;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .node--type-mt-post.node--view-mode-full .node__side {
+    -ms-flex: 0 0 120px;
+    flex: 0 0 120px;
+    max-width: 120px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .layout-no-sidebars .node--type-mt-post.node--view-mode-full .node__side {
+    -ms-flex: 0 0 180px;
+    flex: 0 0 180px;
+    max-width: 180px;
+  }
+  .node--type-mt-post.node--view-mode-full .node__side + .node__main-content {
+    overflow: hidden;
+  }
+}
+@media (min-width: 992px) {
+  .layout-no-sidebars .node--type-mt-post.node--view-mode-full .node__side {
+    -ms-flex: 0 0 210px;
+    flex: 0 0 210px;
+    max-width: 210px;
+  }
+}
+@media (max-width: 767px) {
+  .node--type-mt-post.node--view-mode-full .node__side {
+    display: none;
+  }
+}
+
+/*responsive typography*/
+.paragraph-responsive-typography-enabled.page-node-type-mt-post .node__main-content p {
+  line-height: calc(155% + 0.2vw);
+  font-size: calc(0.85em + 0.2vw);
+}
+.paragraph-responsive-typography-enabled.page-node-type-mt-post .node--view-mode-teaser .node__main-content p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/*post subheader*/
+.node--type-mt-post .node__main-content .field--name-field-mt-pst-subheader p {
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+.field--name-field-mt-pst-image {
+  position: relative;
+}
+.field--name-field-mt-pst-image:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -20px;
+  left: auto;
+  right: -20px;
+  z-index: -1;
+}
+@media (min-width: 1200px) {
+  .field--name-field-mt-pst-image:before {
+    top: -30px;
+    right: -30px;
+  }
+}
+@media (max-width: 991px) {
+  .field--name-field-mt-pst-image:before {
+    top: -15px;
+    right: -15px;
+  }
+}
+@media (max-width: 575px) {
+  .field--name-field-mt-pst-image:before {
+    top: -10px;
+    right: -10px;
+  }
+}
+
+/*post taxonomy*/
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline {
+  margin-left: 20px;
+  display: inline-block;
+}
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline .field__item {
+  margin: 0;
+}
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline .field__item a {
+  display: inline-block;
+}
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline .field__item:after {
+  content: ", ";
+  display: inline;
+}
+.node--type-mt-post .field--entity-reference-target-type-taxonomy-term + .field--entity-reference-target-type-taxonomy-term--inline .field__item:last-child:after {
+  content: "";
+}

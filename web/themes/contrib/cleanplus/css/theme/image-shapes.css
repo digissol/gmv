@@ -1,0 +1,58 @@
+/**
+ * @file
+ * Styles for Clean+'s images.
+ */
+/*global styles*/
+.mt-style-sharp img,
+.mt-style-sharp .overlay,
+.mt-style-sharp .in-page-images-carousel .slides li a:after,
+.mt-style-sharp .field--name-field-mt-srv-image:before,
+.mt-style-sharp .field--name-field-mt-highlight-image:before,
+.mt-style-sharp .video-item > a:before,
+.mt-style-sharp .field--name-field-mt-pst-image:before {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.mt-style-oval img,
+.mt-style-rounded img,
+.mt-style-oval .overlay,
+.mt-style-rounded .overlay,
+.mt-style-oval .in-page-images-carousel .slides li a:after,
+.mt-style-rounded .in-page-images-carousel .slides li a:after,
+.mt-style-oval .field--name-field-mt-srv-image:before,
+.mt-style-rounded .field--name-field-mt-srv-image:before,
+.mt-style-oval .field--name-field-mt-highlight-image:before,
+.mt-style-rounded .field--name-field-mt-highlight-image:before,
+.mt-style-oval .video-item > a:before,
+.mt-style-rounded .video-item > a:before,
+.mt-style-oval .field--name-field-mt-pst-image:before,
+.mt-style-rounded .field--name-field-mt-pst-image:before {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/*images specific styles*/
+.mt-style-image-sharp img,
+.mt-style-image-sharp .overlay,
+.mt-style-image-sharp .in-page-images-carousel .slides li a:after,
+.mt-style-image-sharp .field--name-field-mt-srv-image:before,
+.mt-style-image-sharp .field--name-field-mt-highlight-image:before,
+.mt-style-image-sharp .video-item > a:before,
+.mt-style-image-sharp .field--name-field-mt-pst-image:before {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+.mt-style-image-rounded img,
+.mt-style-image-rounded .overlay,
+.mt-style-image-rounded .in-page-images-carousel .slides li a:after,
+.mt-style-image-rounded .field--name-field-mt-srv-image:before,
+.mt-style-image-rounded .field--name-field-mt-highlight-image:before,
+.mt-style-image-rounded .video-item > a:before,
+.mt-style-image-rounded .field--name-field-mt-pst-image:before {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}

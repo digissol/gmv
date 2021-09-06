@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Clean+'s theme implementation to display a Team Member node in teaser tile view mode.
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+    'text-center'
+  ]
+%}
+{{ attach_library('cleanplus/node-view-mode-teaser-tile') }}
+{% set image = content.field_mt_tmm_member_photo %}
+{% set teaser_tile_pre_content_first = content.field_mt_tmm_subtitle %}
+{% set teaser_tile_pre_content_second = null %}
+{% set teaser_tile_subtitle = null %}
+{% set rendered_content = content|without('field_mt_tmm_member_photo', 'field_mt_tmm_twitter_account', 'field_mt_tmm_facebook_account', 'field_mt_tmm_linkedin_account', 'field_mt_tmm_youtube_account', 'field_mt_tmm_subtitle') %}
+{% set teaser_tile_content = null %}
+{% set image_caption = social_accounts %}
+{% set date_overlay = false %}
+{% set submitted_day = null %}
+{% set submitted_month = null %}
+{% set submitted_year = null %}
+{% set read_more = null %}
+{% include '@cleanplus/partials/_mt-teaser-tile.html.twig' %}

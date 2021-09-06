@@ -1,0 +1,11 @@
+name: 'User Approval Dashboard'
+type: module
+description: 'Approve users on a dasboard.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Custom'
+
+# Information added by Drupal.org packaging script on 2020-03-04
+version: '8.x-1.2'
+project: 'user_approval_dashboard'
+datestamp: 1583329559

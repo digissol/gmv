@@ -1,0 +1,21 @@
+/**
+ * @file
+ * Visual styles for Clean+'s media tabs.
+ */
+.field--name-field-mt-mdtb-subtitle {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: -55px;
+}
+ .field--mt-media-tabs .nav-pills {
+  margin-bottom: 45px;
+}
+.mt-media-title {
+  margin-bottom: 25px;
+}
+.mt-media-title h3 {
+  font-size: 50px;
+}
+.mt-media-body {
+  margin-bottom: 15px;
+}

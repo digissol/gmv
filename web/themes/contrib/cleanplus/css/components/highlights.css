@@ -1,0 +1,27 @@
+/**
+ * @file
+ * Visual styles for highlights in Clean+.
+ */
+.highlights {
+  margin: 60px 0 30px;
+}
+.highlight {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.highlight-head {
+  font-size: 100px;
+  font-weight: 600;
+  line-height: 1;
+}
+.highlight-head:after {
+  content: "+";
+}
+.highlight-body {
+  font-size: 18px;
+  font-weight: 400;
+}
+.headings-wide-spacing-enabled .highlight-body {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}

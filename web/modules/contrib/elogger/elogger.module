@@ -1,0 +1,136 @@
+<?php
+
+/**
+ * @file
+ * The Event logger module file.
+ */
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\views\ViewExecutable;
+use Symfony\Component\HttpFoundation\Session\Session;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function elogger_entity_insert(EntityInterface $entity) {
+  _log_entity_event('entity_create', $entity);
+}
+
+/**
+ * Implements hook_entity_update().
+ */
+function elogger_entity_update(EntityInterface $entity) {
+  _log_entity_event('entity_update', $entity);
+}
+
+/**
+ * Implements hook_entity_delete().
+ */
+function elogger_entity_delete(EntityInterface $entity) {
+  _log_entity_event('entity_delete', $entity);
+}
+
+/**
+ * Callback for calling a core event.
+ */
+function _log_entity_event($event_type, $entity) {
+  $elog_service = \Drupal::service('elogger.logger');
+  $elog_service->setEntity($entity);
+  $elog_service->logEvent($event_type);
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function elogger_entity_presave(EntityInterface $entity) {
+  if (!$entity->isNew()) {
+    // Add the entity original state before it was updated, so, we can build the
+    // diff from it.
+    $session = \Drupal::service('session');
+    $session->set($entity->id() . $entity->uuid(), $entity->original);
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function elogger_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $elogger_exposed_form = 'views-exposed-form-elogger-elogs';
+
+  if (
+    $form_id == 'views_exposed_form' &&
+    $form['#id'] == $elogger_exposed_form
+  ) {
+    if (!empty($form['module'])) {
+      // Convert the textfield exposed filter to a dropdown with the list of all
+      // available modules (excepting "elogger").
+      $options = ['' => t('All')];
+      $config = \Drupal::service('config.factory')->getEditable('elogger.settings');
+      $options += !empty($config->get('modules')) ? $config->get('modules') : [];
+
+      _preprocess_exposed_filter_select($form['module'], $options);;
+    }
+
+    if (!empty($form['event_type'])) {
+      $options = ['' => t('All')];
+      $options += \Drupal::service('elogger.logger')->getEventTypes();
+      _preprocess_exposed_filter_select($form['event_type'], $options);
+    }
+  }
+
+  // Skip the elogger exposed form from elogging events triggering.
+  if ($form['#id'] != $elogger_exposed_form) {
+    array_unshift($form['#submit'], '_add_form_submit_log');
+  }
+}
+
+/**
+ * Convert the textarea exposed filter to a dropdown.
+ *
+ * @param array $filter
+ *   The filter exposed form data.
+ * @param array $options
+ *   The filter dropdown options.
+ */
+function _preprocess_exposed_filter_select(array &$filter, array $options) {
+  $filter['#type'] = 'select';
+  $filter['#options'] = $options;
+  $filter['#size'] = NULL;
+}
+
+/**
+ * Elogger form submit global handler.
+ */
+function _add_form_submit_log(&$form, FormStateInterface $form_state) {
+  // Log an event once a form was submitted.
+  $elog_service = \Drupal::service('elogger.logger');
+  $elog_service->setForm($form, $form_state);
+  $elog_service->logEvent('actions');
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function elogger_views_pre_render(ViewExecutable $view) {
+  if ($view->id() == 'elogger') {
+    $elog_service = \Drupal::service('elogger.logger');
+    foreach ($view->result as $value) {
+      $diff = $value->_entity->get('diff')->value;
+      if (!empty($diff)) {
+        $diff = unserialize($diff);
+        $table_diff = $elog_service->buildDiffOutput($diff);
+        // Display the system diff theme output data table for this entity.
+        $value->_entity->set('diff', $table_diff);
+      }
+
+      $form_data = $value->_entity->get('form_data')->value;
+      if (!empty($form_data)) {
+        $form_data = unserialize($form_data);
+        $formatted_data = $elog_service->buildFormData($form_data);
+        // Display the formatted form data as a json output pretty format.
+        $value->_entity->set('form_data', $formatted_data);
+      }
+    }
+  }
+}

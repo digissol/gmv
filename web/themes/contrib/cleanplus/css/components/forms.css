@@ -1,0 +1,710 @@
+/**
+ * @file
+ * Visual styles for Clean+'s forms.
+ */
+.form-item,
+.form-actions {
+  margin: 0 0 20px 0;
+}
+.header__section .form-item,
+.header__section .form-actions {
+  margin: 0;
+}
+input.form-text,
+input.form-tel,
+input.form-email,
+input.form-url,
+input.form-search,
+input.form-file,
+input.form-number,
+input.form-color,
+input.form-date,
+input.form-time,
+textarea,
+select {
+  padding: 10px 15px;
+  margin: 0;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  background-color: transparent;
+  font-weight: 400;
+  -webkit-transition: border-color 0.2s linear;
+  -o-transition: border-color 0.2s linear;
+  transition: border-color 0.2s linear;
+  font-size: 18px;
+}
+.region--default-background input.form-text,
+.region--default-background input.form-tel,
+.region--default-background input.form-email,
+.region--default-background input.form-url,
+.region--default-background input.form-search,
+.region--default-background input.form-file,
+.region--default-background input.form-number,
+.region--default-background input.form-color,
+.region--default-background input.form-date,
+.region--default-background input.form-time,
+.region--default-background textarea,
+.region--default-background select,
+.region--default-background fieldset {
+  border-color: rgba(var(--mt-color-default-contrast-value), 0.5);
+  color: var(--mt-color-default-contrast);
+  background-color: var(--mt-color-default)
+}
+.region--default-background select option {
+  background-color: var(--mt-color-default);
+}
+.region--bright-background input.form-text,
+.region--bright-background input.form-tel,
+.region--bright-background input.form-email,
+.region--bright-background input.form-url,
+.region--bright-background input.form-search,
+.region--bright-background input.form-file,
+.region--bright-background input.form-number,
+.region--bright-background input.form-color,
+.region--bright-background input.form-date,
+.region--bright-background input.form-time,
+.region--bright-background textarea,
+.region--bright-background select,
+.region--bright-background fieldset {
+  border-color: rgba(var(--mt-color-bright-contrast-value), 0.5);
+  color: var(--mt-color-bright-contrast);
+  background-color: var(--mt-color-bright)
+}
+.region--bright-background select option {
+  background-color: var(--mt-color-bright);
+}
+.region--accent-background input.form-text,
+.region--accent-background input.form-tel,
+.region--accent-background input.form-email,
+.region--accent-background input.form-url,
+.region--accent-background input.form-search,
+.region--accent-background input.form-file,
+.region--accent-background input.form-number,
+.region--accent-background input.form-color,
+.region--accent-background input.form-date,
+.region--accent-background input.form-time,
+.region--accent-background textarea,
+.region--accent-background select,
+.region--accent-background fieldset {
+  border-color: rgba(var(--mt-color-accent-contrast-value), 0.5);
+  color: var(--mt-color-accent-contrast);
+  background-color: var(--mt-color-accent)
+}
+.region--accent-background select option {
+  background-color: var(--mt-color-accent);
+}
+.region--tint-background input.form-text,
+.region--tint-background input.form-tel,
+.region--tint-background input.form-email,
+.region--tint-background input.form-url,
+.region--tint-background input.form-search,
+.region--tint-background input.form-file,
+.region--tint-background input.form-number,
+.region--tint-background input.form-color,
+.region--tint-background input.form-date,
+.region--tint-background input.form-time,
+.region--tint-background textarea,
+.region--tint-background select,
+.region--tint-background fieldset {
+  border-color: rgba(var(--mt-color-tint-contrast-value), 0.5);
+  color: var(--mt-color-tint-contrast);
+  background-color: var(--mt-color-tint)
+}
+.region--tint-background select option {
+  background-color: var(--mt-color-tint);
+}
+.region--shade-background input.form-text,
+.region--shade-background input.form-tel,
+.region--shade-background input.form-email,
+.region--shade-background input.form-url,
+.region--shade-background input.form-search,
+.region--shade-background input.form-file,
+.region--shade-background input.form-number,
+.region--shade-background input.form-color,
+.region--shade-background input.form-date,
+.region--shade-background input.form-time,
+.region--shade-background textarea,
+.region--shade-background select,
+.region--shade-background fieldset {
+  border-color: rgba(var(--mt-color-shade-contrast-value), 0.5);
+  color: var(--mt-color-shade-contrast);
+  background-color: var(--mt-color-shade)
+}
+.region--shade-background select option {
+  background-color: var(--mt-color-shade);
+}
+.region--colored-background input.form-text,
+.region--colored-background input.form-tel,
+.region--colored-background input.form-email,
+.region--colored-background input.form-url,
+.region--colored-background input.form-search,
+.region--colored-background input.form-file,
+.region--colored-background input.form-number,
+.region--colored-background input.form-color,
+.region--colored-background input.form-date,
+.region--colored-background input.form-time,
+.region--colored-background textarea,
+.region--colored-background select,
+.region--colored-background fieldset {
+  border-color: rgba(var(--mt-color-colored-contrast-value), 0.5);
+  color: var(--mt-color-colored-contrast);
+  background-color: var(--mt-color-colored)
+}
+.region--colored-background select option {
+  background-color: var(--mt-color-colored);
+}
+.region--dark-colored-background input.form-text,
+.region--dark-colored-background input.form-tel,
+.region--dark-colored-background input.form-email,
+.region--dark-colored-background input.form-url,
+.region--dark-colored-background input.form-search,
+.region--dark-colored-background input.form-file,
+.region--dark-colored-background input.form-number,
+.region--dark-colored-background input.form-color,
+.region--dark-colored-background input.form-date,
+.region--dark-colored-background input.form-time,
+.region--dark-colored-background textarea,
+.region--dark-colored-background select,
+.region--dark-colored-background fieldset {
+  border-color: rgba(var(--mt-color-dark-colored-contrast-value), 0.5);
+  color: var(--mt-color-dark-colored-contrast);
+  background-color: var(--mt-color-dark-colored)
+}
+.region--dark-colored-background select option {
+  background-color: var(--mt-dark-color-colored);
+}
+.region--dark-background input.form-text,
+.region--dark-background input.form-tel,
+.region--dark-background input.form-email,
+.region--dark-background input.form-url,
+.region--dark-background input.form-search,
+.region--dark-background input.form-file,
+.region--dark-background input.form-number,
+.region--dark-background input.form-color,
+.region--dark-background input.form-date,
+.region--dark-background input.form-time,
+.region--dark-background textarea,
+.region--dark-background select,
+.region--dark-background fieldset {
+  border-color: rgba(var(--mt-color-dark-contrast-value), 0.5);
+  color: var(--mt-color-dark-contrast);
+  background-color: var(--mt-color-dark)
+}
+.region--dark-background select option {
+  background-color: var(--mt-color-dark);
+}
+.region--pattern input.form-text,
+.region--pattern input.form-tel,
+.region--pattern input.form-email,
+.region--pattern input.form-url,
+.region--pattern input.form-search,
+.region--pattern input.form-file,
+.region--pattern input.form-number,
+.region--pattern input.form-color,
+.region--pattern input.form-date,
+.region--pattern input.form-time,
+.region--pattern textarea,
+.region--pattern select,
+.region--pattern fieldset {
+  border-color: rgba(var(--mt-color-pattern-contrast-value), 0.5);
+  color: var(--mt-color-pattern-contrast);
+  background-color: var(--mt-color-pattern)
+}
+.region--pattern select option {
+  background-color: var(--mt-color-pattern);
+}
+.form-composite > .fieldset-wrapper > .description,
+.form-item .description {
+  font-size: 14px;
+  opacity: 0.65;
+  margin-top: 4px;
+}
+input[type=search] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*webkit specific rules for select list*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  select {
+    background-image: url("../../images/angle-down-black.png");
+    background-image: linear-gradient(transparent, transparent), url("../../images/angle-down-black.svg");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: 98.5% 50%;
+  }
+  .region--default-background select {
+    background-image: url("../../images/angle-down-black.png");
+    background-image: linear-gradient(transparent, transparent), url("../../images/angle-down-black.svg");
+  }
+  .region--shade-background select {
+    background-image: url("../../images/angle-down-white.png");
+    background-image: linear-gradient(transparent, transparent), url("../../images/angle-down-white.svg");
+  }
+  .region--colored-background select {
+    background-image: url("../../images/angle-down-white.png");
+    background-image: linear-gradient(transparent, transparent), url("../../images/angle-down-white.svg");
+  }
+  .region--dark-colored-background select {
+    background-image: url("../../images/angle-down-white.png");
+    background-image: linear-gradient(transparent, transparent), url("../../images/angle-down-white.svg");
+  }
+  .region--dark-background select {
+    background-image: url("../../images/angle-down-white.png");
+    background-image: linear-gradient(transparent, transparent), url("../../images/angle-down-white.svg");
+  }
+}
+
+/*inline form elements*/
+.container-inline div {
+  display: inline-block;
+  vertical-align: top;
+}
+.container-inline input.form-text,
+.container-inline input.form-tel,
+.container-inline input.form-email,
+.container-inline input.form-url,
+.container-inline input.form-search,
+.container-inline input.form-file,
+.container-inline input.form-number,
+.container-inline input.form-color,
+.container-inline input.form-date,
+.container-inline input.form-time {
+  width: auto;
+  margin-right: 0;
+  display: inline-block;
+}
+.container-inline input[type="submit"] {
+  margin: 0;
+}
+.container-inline input[type="submit"],
+.form--inline input[type="submit"] {
+  line-height: 25px;
+  padding: 12px 24px 13px;
+}
+@media (max-width: 767px) {
+  .container-inline div {
+    display: block;
+  }
+  .container-inline .form-actions {
+    margin: 0 0 20px 0;
+    display: block;
+  }
+  .container-inline .form-submit {
+    margin-top: 5px;
+  }
+  .container-inline input.form-text,
+  .container-inline input.form-tel,
+  .container-inline input.form-email,
+  .container-inline input.form-url,
+  .container-inline input.form-search,
+  .container-inline input.form-file,
+  .container-inline input.form-number,
+  .container-inline input.form-color,
+  .container-inline input.form-date,
+  .container-inline input.form-time {
+    width: 100%;
+  }
+}
+
+/*filter wrapper*/
+.filter-wrapper .form-item label {
+  display: inline-block;
+}
+
+/*Form group*/
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+.form-group:last-child {
+  margin-bottom: 0;
+}
+.form-group .form-item,
+.form-group .form-actions {
+  margin: 0;
+}
+.form-submit-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  color: #ffffff;
+  border: none;
+  border-radius: 0 5px 5px 0;
+}
+.form-submit-icon .svg-inline--fa {
+  height: 100%;
+}
+
+/*textarea*/
+textarea {
+  resize: none;
+}
+label {
+  display: block;
+  font-size: 15px;
+}
+
+/*details*/
+details > .details-wrapper {
+  padding-bottom: 1.5em;
+}
+
+/*fieldset*/
+fieldset {
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.5em 1.5em;
+  margin: 0 0 20px;
+}
+fieldset legend {
+  display: inline-block;
+  width: auto;
+  padding: 5px;
+  font-size: 15px;
+  margin-left: 10px;
+}
+fieldset.webform-type-radios,
+fieldset.webform-type-checkboxes {
+  border: none;
+}
+fieldset.webform-type-radios legend,
+fieldset.webform-type-checkboxes legend {
+  border: none;
+  font-weight: 400;
+  font-size: 15px;
+}
+.form-type-checkbox.form-no-label input[type="checkbox"],
+.form-type-checkbox.form-no-label input[type="radio"] {
+  display: inline-block;
+  margin-right: 7px;
+}
+.form-type-checkbox.form-no-label input[type="checkbox"] + .description,
+.form-type-checkbox.form-no-label input[type="radio"] + .description {
+  display: inline-block;
+  margin-left: 0;
+}
+
+/*checkboxes and radios*/
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 0px 10px 3px 0;
+}
+
+/*contact page*/
+.contact-form .form-item {
+  font-size: 20px;
+}
+.contact-form label {
+  margin-bottom: 0;
+}
+.contact-form input.form-text,
+.contact-form input.form-tel,
+.contact-form input.form-email,
+.contact-form input.form-url,
+.contact-form input.form-search,
+.contact-form input.form-file,
+.contact-form input.form-number,
+.contact-form input.form-color,
+.contact-form input.form-date,
+.contact-form input.form-time,
+.contact-form textarea,
+.contact-form select {
+  border-width: 0 0 1px 0;
+  border-radius: 0!important;
+  font-size: 20px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.region--accent-background .contact-form label {
+  color: rgba(var(--mt-color-accent-contrast-value), 0.5)
+}
+.region--bright-background .contact-form label {
+  color: rgba(var(--mt-color-bright-contrast-value), 0.5)
+}
+.region--colored-background .contact-form label {
+  color: rgba(var(--mt-color-colored-contrast-value), 0.5)
+}
+.region--dark-background .contact-form label {
+  color: rgba(var(--mt-color-dark-contrast-value), 0.5)
+}
+.region--dark-colored-background .contact-form label {
+  color: rgba(var(--mt-color-dark-colored-contrast-value), 0.5)
+}
+.region--pattern .contact-form label {
+  color: rgba(var(--mt-color-pattern-contrast-value), 0.5)
+}
+.region--shade-background .contact-form label {
+  color: rgba(var(--mt-color-shade-contrast-value), 0.5)
+}
+.region--tint-background .contact-form label {
+  color: rgba(var(--mt-color-tint-contrast-value), 0.5)
+}
+.region--default-background .contact-form label {
+  color: rgba(var(--mt-color-default-contrast-value), 0.5)
+}
+
+/*hero form*/
+@media (min-width: 992px) {
+  .col-12 .region .block-webform-block {
+    max-width: 66.66667%;
+    margin: 0 auto;
+  }
+}
+.col-12 .region .block-webform-block .form-actions {
+  text-align: center;
+}
+.block-webform-block .form-item {
+  font-size: 20px;
+}
+.block-webform-block label {
+  margin-bottom: 0;
+}
+.block-webform-block input.form-text,
+.block-webform-block input.form-tel,
+.block-webform-block input.form-email,
+.block-webform-block input.form-url,
+.block-webform-block input.form-search,
+.block-webform-block input.form-file,
+.block-webform-block input.form-number,
+.block-webform-block input.form-color,
+.block-webform-block input.form-date,
+.block-webform-block input.form-time,
+.block-webform-block textarea,
+.block-webform-block select {
+  border-width: 0 0 1px 0;
+  border-radius: 0!important;
+  font-size: 20px;
+  padding-left: 0;
+  padding-right: 0;
+}
+.region--accent-background .block-webform-block label {
+  color: rgba(var(--mt-color-accent-contrast-value), 0.5)
+}
+.region--bright-background .block-webform-block label {
+  color: rgba(var(--mt-color-bright-contrast-value), 0.5)
+}
+.region--colored-background .block-webform-block label {
+  color: rgba(var(--mt-color-colored-contrast-value), 0.5)
+}
+.region--dark-background .block-webform-block label {
+  color: rgba(var(--mt-color-dark-contrast-value), 0.5)
+}
+.region--dark-colored-background .block-webform-block label {
+  color: rgba(var(--mt-color-dark-colored-contrast-value), 0.5)
+}
+.region--pattern .block-webform-block label {
+  color: rgba(var(--mt-color-pattern-contrast-value), 0.5)
+}
+.region--shade-background .block-webform-block label {
+  color: rgba(var(--mt-color-shade-contrast-value), 0.5)
+}
+.region--tint-background .block-webform-block label {
+  color: rgba(var(--mt-color-tint-contrast-value), 0.5)
+}
+.region--default-background .block-webform-block label {
+  color: rgba(var(--mt-color-default-contrast-value), 0.5)
+}
+
+/*form placeholder*/
+::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+:-moz-placeholder {
+  opacity: 0.5;
+}
+::-moz-placeholder {
+  opacity: 0.5;
+}
+:-ms-input-placeholder {
+  opacity: 0.5;
+}
+::placeholder {
+  opacity: 0.5;
+}
+.region--default-background ::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-default-contrast);
+}
+.region--default-background :-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-default-contrast);
+}
+.region--default-background ::-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-default-contrast);
+}
+.region--default-background :-ms-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-default-contrast);
+}
+.region--default-background ::placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-default-contrast);
+}
+.region--bright-background ::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-bright-contrast);
+}
+.region--bright-background :-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-bright-contrast);
+}
+.region--bright-background ::-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-bright-contrast);
+}
+.region--bright-background :-ms-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-bright-contrast);
+}
+.region--bright-background ::placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-bright-contrast);
+}
+.region--accent-background ::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-accent-contrast);
+}
+.region--accent-background :-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-accent-contrast);
+}
+.region--accent-background ::-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-accent-contrast);
+}
+.region--accent-background :-ms-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-accent-contrast);
+}
+.region--accent-background ::placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-accent-contrast);
+}
+.region--tint-background ::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-tint-contrast);
+}
+.region--tint-background :-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-tint-contrast);
+}
+.region--tint-background ::-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-tint-contrast);
+}
+.region--tint-background :-ms-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-tint-contrast);
+}
+.region--tint-background ::placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-tint-contrast);
+}
+.region--shade-background ::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-shade-contrast);
+}
+.region--shade-background :-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-shade-contrast);
+}
+.region--shade-background ::-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-shade-contrast);
+}
+.region--shade-background :-ms-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-shade-contrast);
+}
+.region--shade-background ::placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-shade-contrast);
+}
+.region--colored-background ::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-colored-contrast);
+}
+.region--colored-background :-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-colored-contrast);
+}
+.region--colored-background ::-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-colored-contrast);
+}
+.region--colored-background :-ms-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-colored-contrast);
+}
+.region--colored-background ::placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-colored-contrast);
+}
+.region--dark-colored-background ::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+.region--dark-colored-background :-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-colored-background ::-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-colored-background :-ms-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-colored-background ::placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-dark-colored-contrast);
+}
+.region--dark-background ::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-dark-contrast);
+}
+.region--dark-background :-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-dark-contrast);
+}
+.region--dark-background ::-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-dark-contrast);
+}
+.region--dark-background :-ms-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-dark-contrast);
+}
+.region--dark-background ::placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-dark-contrast);
+}
+.region--pattern ::-webkit-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-pattern-contrast);
+}
+.region--pattern :-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-pattern-contrast);
+}
+.region--pattern ::-moz-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-pattern-contrast);
+}
+.region--pattern :-ms-input-placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-pattern-contrast);
+}
+.region--pattern ::placeholder {
+  opacity: 0.5;
+  color: var(--mt-color-pattern-contrast);
+}

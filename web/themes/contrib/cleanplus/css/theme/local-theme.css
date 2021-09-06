@@ -1,0 +1,38 @@
+body, div, p, ul, ol, li {
+    text-align: justify;
+}
+
+
+
+.group .layout__region {
+    padding-left: 10px;    
+    padding-right: 10px;
+}
+
+.view-content .media-object .media .overlay-container {
+    margin-right: 10px;
+}
+
+.view-content .media-object .media {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+.view-partenaire-group .carousel-caption a  {
+    color: white; text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+
+.block-group-operations{
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+
+.block-group-operations .dropbutton-widget {
+    border-radius: 10px;
+    line-height: 40px;
+    padding-left: 20px;
+}

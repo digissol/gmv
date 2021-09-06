@@ -1,0 +1,5 @@
+coffee_mediteran:
+  version: VERSION
+  css:
+    theme:
+      css/coffee.css: {}

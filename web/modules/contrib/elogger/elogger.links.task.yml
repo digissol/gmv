@@ -1,0 +1,27 @@
+# Define the Event log entity tabs.
+elogger.elog_settings:
+  title: 'SMS - Entity Settings.'
+  route_name: elogger.elog_settings
+  base_route: elogger.elog_settings
+
+elog.view:
+  route_name: entity.elog.canonical
+  base_route: entity.elog.canonical
+  title: 'View'
+
+elog.delete_confirm:
+  route_name:  entity.elog.delete_form
+  base_route:  entity.elog.canonical
+  title: 'Delete'
+  weight: 10
+
+# Define the System config tabs.
+elogger.system:
+  title: 'Filter Configurations'
+  route_name: elogger.system
+  base_route: elogger.system
+
+elogger.system.log_messages:
+  title: 'Log Messages Configurations'
+  route_name: elogger.system.log_messages
+  base_route: elogger.system

@@ -1,0 +1,11 @@
+elogger.elog_settings:
+  title: 'Event log - Settings'
+  description: 'Configure Even log entity'
+  route_name:  elogger.elog_settings
+  parent: system.admin_structure
+
+elogger.system:
+  title: 'Elogger - Configuration'
+  description: 'Configuration management.'
+  parent: system.admin_config_system
+  route_name: elogger.system

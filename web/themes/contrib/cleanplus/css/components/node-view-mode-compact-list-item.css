@@ -1,0 +1,14 @@
+/**
+ * @file
+ * Visual styles for Clean+'s node in compact list item view.
+ */
+.node--view-mode-mt-compact-list-item {
+  margin-bottom: 30px;
+}
+.node--view-mode-mt-compact-list-item .node__submitted {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.node--view-mode-mt-compact-list-item h6 {
+  font-size: 16px;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "drupal/elogger",
+  "type": "drupal-module",
+  "description": "A module designed to logging different kind of events in the system.",
+  "homepage": "https://www.drupal.org/project/elogger",
+  "license": "GPL-2.0+",
+  "require": {
+    "php": ">=7.1",
+    "drupal/views_data_export": "^1.0",
+    "drupal/diff": "^1.0",
+    "drupal/token": "^1.0"
+  }
+}

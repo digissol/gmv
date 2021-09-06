@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Clean+'s theme implementation to display a Album node.
+ */
+#}
+
+{% extends "node.html.twig" %}
+{% block content %}
+  {{ attach_library('cleanplus/node-album') }}
+  {{ content }}
+{% endblock %}

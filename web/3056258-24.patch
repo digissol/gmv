@@ -1,0 +1,91 @@
+diff --git a/core/modules/taxonomy/src/TermForm.php b/core/modules/taxonomy/src/TermForm.php
+index eb3463dd89..0dd074f07d 100644
+--- a/core/modules/taxonomy/src/TermForm.php
++++ b/core/modules/taxonomy/src/TermForm.php
+@@ -161,6 +161,7 @@ public function save(array $form, FormStateInterface $form_state) {
+       case SAVED_NEW:
+         $this->messenger()->addStatus($this->t('Created new term %term.', ['%term' => $view_link]));
+         $this->logger('taxonomy')->notice('Created new term %term.', ['%term' => $term->getName(), 'link' => $edit_link]);
++        $form_state->setRedirectUrl($term->vid->entity->toUrl('overview-form'));
+         break;
+ 
+       case SAVED_UPDATED:
+diff --git a/core/modules/taxonomy/tests/src/Functional/TermParentsTest.php b/core/modules/taxonomy/tests/src/Functional/TermParentsTest.php
+index 03a71dd984..c80aabd9ab 100644
+--- a/core/modules/taxonomy/tests/src/Functional/TermParentsTest.php
++++ b/core/modules/taxonomy/tests/src/Functional/TermParentsTest.php
+@@ -63,8 +63,7 @@ protected function setUp(): void {
+    * Tests specifying parents when creating terms.
+    */
+   public function testAddWithParents() {
+-    $this->drupalGet("/admin/structure/taxonomy/manage/{$this->vocabularyId}/add");
+-    $page = $this->getSession()->getPage();
++    $page = $this->getAddTermPage();
+ 
+     // Create a term without any parents.
+     $term_1 = $this->submitAddTermForm('Test term 1');
+@@ -73,28 +72,33 @@ public function testAddWithParents() {
+ 
+     // Explicitly selecting <root> should have the same effect as not selecting
+     // anything.
++    $page = $this->getAddTermPage();
+     $page->selectFieldOption('Parent terms', '<root>');
+     $term_2 = $this->submitAddTermForm('Test term 2');
+     $this->assertEquals($expected, $term_2->get('parent')->getValue());
+ 
+     // Create two terms with the previously created ones as parents,
+     // respectively.
++    $page = $this->getAddTermPage();
+     $page->selectFieldOption('Parent terms', 'Test term 1');
+     $term_3 = $this->submitAddTermForm('Test term 3');
+     $expected = [['target_id' => $term_1->id()]];
+     $this->assertEquals($expected, $term_3->get('parent')->getValue());
++    $page = $this->getAddTermPage();
+     $page->selectFieldOption('Parent terms', 'Test term 2');
+     $term_4 = $this->submitAddTermForm('Test term 4');
+     $expected = [['target_id' => $term_2->id()]];
+     $this->assertEquals($expected, $term_4->get('parent')->getValue());
+ 
+     // Create a term with term 3 as parent.
++    $page = $this->getAddTermPage();
+     $page->selectFieldOption('Parent terms', '-Test term 3');
+     $term_5 = $this->submitAddTermForm('Test term 5');
+     $expected = [['target_id' => $term_3->id()]];
+     $this->assertEquals($expected, $term_5->get('parent')->getValue());
+ 
+     // Create a term with multiple parents.
++    $page = $this->getAddTermPage();
+     $page->selectFieldOption('Parent terms', '--Test term 5');
+     $page->selectFieldOption('Parent terms', '-Test term 4', TRUE);
+     $term_6 = $this->submitAddTermForm('Test term 6');
+@@ -105,6 +109,17 @@ public function testAddWithParents() {
+     $this->assertEquals($expected, $term_6->get('parent')->getValue());
+   }
+ 
++  /**
++   * Returns add term page.
++   *
++   * @return \Behat\Mink\Element\DocumentElement
++   *   The add term page.
++   */
++  protected function getAddTermPage() {
++    $this->drupalGet("/admin/structure/taxonomy/manage/{$this->vocabularyId}/add");
++    return $this->getSession()->getPage();
++  }
++
+   /**
+    * Creates a term through the user interface and returns it.
+    *
+diff --git a/core/modules/taxonomy/tests/src/Functional/VocabularyPermissionsTest.php b/core/modules/taxonomy/tests/src/Functional/VocabularyPermissionsTest.php
+index c0508779cc..8d7610d158 100644
+--- a/core/modules/taxonomy/tests/src/Functional/VocabularyPermissionsTest.php
++++ b/core/modules/taxonomy/tests/src/Functional/VocabularyPermissionsTest.php
+@@ -243,6 +248,8 @@ public function testVocabularyPermissionsTaxonomyTerm() {
+     $edit['name[0][value]'] = $this->randomMachineName();
+ 
+     $this->submitForm($edit, 'Save');
++    // Ensure form redirected back to overview.
++    $this->assertSession()->addressEquals('admin/structure/taxonomy/manage/' . $vocabulary->id() . '/overview');
+     $this->assertText('Created new term ' . $edit['name[0][value]'] . '.');
+ 
+     // Verify that the creation message contains a link to a term.

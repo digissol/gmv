@@ -1,0 +1,10 @@
+name: 'Tab Manager'
+type: module
+description: 'Enables to hide, reorder and rename tabs.'
+core_version_requirement: ^8.9 || ^9
+package: 'Other'
+
+# Information added by Drupal.org packaging script on 2021-06-29
+version: '1.0.1'
+project: 'tab_manager'
+datestamp: 1624975416

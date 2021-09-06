@@ -1,0 +1,9 @@
+# Event log entity permissions.
+administer event log entity:
+  title: 'Administer Event log entity'
+view event log entity:
+  title: 'View event log entity'
+delete event log entity:
+  title: 'Delete event log entity'
+administer elogger configurations:
+  title: 'Administer elogger configurations'

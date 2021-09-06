@@ -1,0 +1,7 @@
+user_approval_dashboard.user_approval_form:
+  path: '/admin/config/dashboard/user-approval'
+  defaults:
+    _form: '\Drupal\user_approval_dashboard\Form\UserApprovalForm'
+    _title: 'User Approval Confirmation'
+  requirements:
+    _permission: 'administer site configuration'

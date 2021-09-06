@@ -1,0 +1,17 @@
+name: Events Logger
+description: A service used for tracking drupal system events.
+package: Events Logger
+
+dependencies:
+  - drupal:token
+  - drupal:views
+  - drupal:views_data_export
+  - drupal:diff
+
+type: module
+core_version_requirement: ^8.7.7 || ^9
+
+# Information added by Drupal.org packaging script on 2021-05-28
+version: '1.0.4'
+project: 'elogger'
+datestamp: 1622199831

@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Clean+'s theme implementation to display internal banner slider of Service node.
+ */
+#}
+
+{% extends "page.html.twig" %}
+{% block internal_sticky_header %}
+{{ attach_library('cleanplus/mt-sticky-element-header') }}
+<div class="internal-sticky-header mt-sticky-element-header region--colored-background">
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      <div class="col">
+        <h2 class="page-title">
+          {{ node.label }}
+        </h2>
+      </div>
+      {% if mt_prd_buy_link|render or mt_prd_price|render %}
+        <div class="col-6 col-xl-4">
+          <div class="row d-flex align-items-center">
+            <div class="col-6 text-right">
+              {{ mt_prd_price }}
+            </div>
+            <div class="col-6">
+              {{ mt_prd_buy_link }}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block internal_banner %}
+  {% if page.hero_top  %}
+    {{ attach_library('cleanplus/banner-area') }}
+    <div class="internal-banner-container {{ hero_top_background_color }}">
+      <div {% if hero_top_id %}id="{{ hero_top_id }}"{% endif %} class="clearfix hero-top d-flex align-items-end {{ (hero_top_blocks_paddings) ? ' region--no-block-paddings' : '' }}{{ (hero_top_region_paddings) ? ' region--no-paddings' : '' }}">
+        <div class="internal-banner d-flex align-items-end">
+        {# hero-top #}
+          <div class="{{ hero_top_layout_container }}">
+            {# hero-top__container #}
+            <div class="clearfix hero-top__container{{ (hero_top_animations == "enabled") ? ' mt-no-opacity' : '' }}"
+              {% if hero_top_animations == "enabled" %}
+                data-animate-effect="{{ hero_top_animation_effect }}"
+              {% endif %}>
+              <div class="row">
+                <div class="col-12">
+                  <div class="hero-top__section">
+                    {{ page.hero_top }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {# EOF:hero-top__container #}
+          </div>
+        </div>
+        {# EOF: hero-top #}
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

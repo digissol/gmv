@@ -1,0 +1,4 @@
+services:
+  elogger.logger:
+    class: Drupal\elogger\Services\Elogger
+    arguments: ['@entity_type.manager', '@current_user', '@date.formatter', '@diff.entity_comparison', '@renderer', '@config.factory', '@token', '@session']

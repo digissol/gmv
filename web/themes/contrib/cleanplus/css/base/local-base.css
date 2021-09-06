@@ -1,0 +1,19 @@
+/**
+ * @file
+ * Use this CSS file to override base CSS rules
+ */
+
+/* Set default font weight to 300 for better typography in high-density screens */
+/*body {
+  font-weight: 300;
+}*/
+
+/* remove background image from header/banner */
+/* .path-frontpage .page-top-container {
+  background-image: none;
+} */
+
+/* remove background image from footer */
+/* .footers-container {
+  background-image: none;
+} */

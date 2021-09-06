@@ -1,0 +1,19 @@
+.view-filters {
+  margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+  .view-filters .form--inline .form-item {
+    float: left;
+    margin-right: 15px;
+    margin-left: 1px; /* Fix overflow issue in FF */
+  }
+}
+.view-filters .bef-exposed-form .form--inline fieldset legend,
+.view-filters .form-item > label:not(.option) {
+  font-size: 18px;
+  padding-bottom: 10px;
+  border: none;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}

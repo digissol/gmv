@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Top+s's theme implementation to display a Showcase node.
+ */
+#}
+
+{% extends "node.html.twig" %}
+{% block meta_area %}
+  {{ title_prefix }}
+  {% if not page %}
+    <h2{{ title_attributes.addClass('node__title') }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
+  {% endif %}
+  {{ title_suffix }}
+  {% if display_submitted %}
+    {{ metadata }}
+  {% endif %}
+{% endblock %}
+{% block content %}
+  {{ attach_library('cleanplus/node-showcase') }}
+  {{ content|without('field_mt_shw_banner_image') }}
+{% endblock %}

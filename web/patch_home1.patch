@@ -1,0 +1,18 @@
+diff --git a/src/TermForm.php b/src/TermForm.php
+index 4f16e90..e010fd9 100644
+--- a/src/TermForm.php
++++ b/src/TermForm.php
+@@ -162,11 +162,13 @@ class TermForm extends ContentEntityForm {
+       case SAVED_NEW:
+         $this->messenger()->addStatus($this->t('Created new term %term.', ['%term' => $view_link]));
+         $this->logger('taxonomy')->notice('Created new term %term.', ['%term' => $term->getName(), 'link' => $edit_link]);
++	$form_state->setRedirectUrl($term->toUrl());
+         break;
+ 
+       case SAVED_UPDATED:
+         $this->messenger()->addStatus($this->t('Updated term %term.', ['%term' => $view_link]));
+         $this->logger('taxonomy')->notice('Updated term %term.', ['%term' => $term->getName(), 'link' => $edit_link]);
++	$form_state->setRedirectUrl($term->toUrl());
+         break;
+     }
+ 

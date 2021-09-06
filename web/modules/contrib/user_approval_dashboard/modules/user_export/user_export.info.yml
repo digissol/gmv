@@ -1,0 +1,14 @@
+name: 'User Export'
+type: module
+description: 'Allows export of user field data in downloadable format such as json,xml,csv.'
+core: 8.x
+package: 'Custom'
+dependencies:
+  - drupal:rest
+  - drupal:serialization
+  - drupal:csv_serialization
+
+# Information added by Drupal.org packaging script on 2020-03-04
+version: '8.x-1.2'
+project: 'user_approval_dashboard'
+datestamp: 1583329559
