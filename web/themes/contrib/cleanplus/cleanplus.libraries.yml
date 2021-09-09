@@ -1987,3 +1987,14 @@ fonts-pt-serif:
     name: SIL Open Font License, 1.1
     url: //scripts.sil.org/OFL
     gpl-compatible: true
+
+#MMS: use for map functionnality
+mapcarto:
+  css:
+    theme: #The CSS category. base is loaded before theme category
+      reactjs/mapbox-clustering/src/index.css: { preprocess: false , minified: true } #weight sets the order within the category above
+  
+  js:
+    reactjs/mapbox-clustering/dist/app.bundle.js: { preprocess: false , minified: true }
+  dependencies:
+    - core/drupalSettings

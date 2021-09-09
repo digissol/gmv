@@ -265,6 +265,20 @@
         {# EOF: content-top #}
       {% endif %}
 
-    </div>
+<!-- #MMS: use for map functionnality --!>
+{{ attach_library('cleanplus/mapcarto') }}
+<div class="container">
+  <div class="row">
+      <div class="col-12">
+        <div class="carto">
+          <div id="mapcarto">
+            hello digissol.
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
   {% endif %}
 {% endblock %}
