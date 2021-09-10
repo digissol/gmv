@@ -2,33 +2,32 @@ import React, { useState, useRef } from "react";
 import useSwr from "swr";
 import ReactMapGL, { Marker, FlyToInterpolator } from "react-map-gl";
 import useSupercluster from "use-supercluster";
+import { FaCertificate } from 'react-icons/fa';
 import "./App.css";
 
 const fetcher = (...args) => fetch(...args).then(response => response.json());
 
 export default function App() {
-  const [viewport, setViewport] = useState({
-    latitude: 52.6376,
-    longitude: -1.135171,
+ const [viewport, setViewport] = useState({
+    latitude: 14.4974,
+    longitude: -14.4524,
     width: "100vw",
     height: "100vh",
-    zoom: 12
+    zoom: 2
   });
   const mapRef = useRef();
 
   const url =
-    "https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2019-10";
+    "http://gmv/geolocations/?_format=json";
+  //#"https://data.police.uk/api/crimes-street/all-crime?lat=52.629729&lng=-1.131592&date=2019-10";
   const { data, error } = useSwr(url, { fetcher });
   const crimes = data && !error ? data.slice(0, 2000) : [];
   const points = crimes.map(crime => ({
     type: "Feature",
-    properties: { cluster: false, crimeId: crime.id, category: crime.category },
+    properties: { cluster: false, crimeId: crime.uuid_1, category: crime.title },
     geometry: {
       type: "Point",
-      coordinates: [
-        parseFloat(crime.location.longitude),
-        parseFloat(crime.location.latitude)
-      ]
+      coordinates: JSON.parse(crime.field_localisation).coordinates
     }
   }));
 
@@ -49,11 +48,12 @@ export default function App() {
 
   return (
     <div>
+     <h1 class="entete">Cartographie acteurs et réalisations</h1>
       <ReactMapGL
         {...viewport}
         maxZoom={20}
-        mapStyle="mapbox://styles/mapbox/satellite-v9"
-        mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+        //mapStyle="mapbox://styles/mapbox/satellite-v9"
+        mapboxApiAccessToken="pk.eyJ1IjoibW1zb3ciLCJhIjoiY2t0YmFydjB1MXR5NDJ1cWxxZWhjZnYwciJ9.CZER0uLmoE91iAgIptvD3g"
         onViewportChange={newViewport => {
           setViewport({ ...newViewport });
         }}
@@ -110,7 +110,7 @@ export default function App() {
               longitude={longitude}
             >
               <button className="crime-marker">
-                <img src="/custody.svg" alt="crime doesn't pay" />
+                <FaCertificate color="#00D100" title="Project"/>
               </button>
             </Marker>
           );

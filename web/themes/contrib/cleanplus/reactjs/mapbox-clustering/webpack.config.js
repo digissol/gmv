@@ -17,11 +17,29 @@ const config = {
          loader: 'babel-loader'
        }
      },
-     {
-        test: /\.css$/,
-        // the order of `use` is important!
-        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
+     loader: 'css-loader', options: {
+        url: false,
+        importLoaders: 2,
+            modules: {
+              mode: 'local',
+              localIdentName: isProduction ? '[hash:base64:5]' : '[local]_[hash:base64:5]'
+            },
      },
+     {
+                test: /\.svg$/,
+                use: [
+                    {
+                        loader: 'svg-url-loader',
+                        options: {
+                            // Inline files smaller than 10 kB
+                            limit: 10 * 1024,
+                            noquotes: true,
+                        },
+                    },
+                ],
+    },
+    ],
+  },
    ]
  },
 };
