@@ -11310,4 +11310,14 @@ code {
   overflow-y: auto;
 }
 
+#actions operations group online
+.block-group-operations li {
+    display: inline-block !important;
+    outline: none;
+    margin: auto 8px;
+} 
+.block-group-operations li {
+    display: inline-block !important;
+    margin: 8px;
+}
 /*# sourceMappingURL=style.css.map */

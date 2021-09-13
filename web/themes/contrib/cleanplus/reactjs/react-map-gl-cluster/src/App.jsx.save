@@ -1,0 +1,129 @@
+import React, { useState, useEffect } from "react";
+import ReactDOM from 'react-dom';
+import MapGL, { Marker } from '@urbica/react-map-gl';
+import Cluster from '@urbica/react-map-gl-cluster';
+import useSwr from "swr";
+import { FaCertificate } from 'react-icons/fa';
+
+
+/** creer une structure array plus adapté de l'ensemble des données de geolocations (partenaires + projects)*/
+const getLocations = ((points) => {
+
+    glocations_restruct = [];
+    console.log("mmmmmmmmmmmma11111");
+    points.forEach((point) => 
+    { 
+      console.log("mmmmmmmmmmmma0");
+      if (point.projet_id )//in case in a project share between many partenaires..
+      {
+          console.log("mmmmmmmmmmmma1");
+          glocations_restruct.push(
+          {
+            id: point.projet_id,
+            type: "project",
+            title: point.projet_title,
+            properties: { cluster: false, glocationId: point.projet_id},
+            geometry: {
+              coordinates: [
+                parseFloat(JSON.parse(point.projet_localisation).coordinates[1]),//longitude
+                parseFloat(JSON.parse(point.projet_localisation).coordinates[0]), //latitude
+              ]
+            }
+          });
+         
+          console.log("mmmmmmmmmmmma2");       
+      }
+
+      if (point.partenaire_id )//in case in a project share between many partenaires..
+      {
+          console.log("mmmmmmmmmmmma3");
+          glocations_restruct.push(
+          {
+            id: point.partenaire_id,
+            title: point.partenaire_title,
+            type: "partenaire",
+            properties: { cluster: false, glocationId: point.partenaire_id},
+            geometry: {
+              coordinates: [
+                parseFloat(JSON.parse(point.partenaire_localisation).coordinates[1]),//longitude
+                parseFloat(JSON.parse(point.partenaire_localisation).coordinates[0]), //latitude
+              ]
+            }
+          });
+         
+          console.log("mmmmmmmmmmmma4");    
+      }
+      
+    });
+
+    return glocations_restruct;
+  }
+);
+
+export default function App() {
+
+  const [viewport, setViewport] = useState({
+    latitude: 0,
+    longitude: 0,
+    zoom: 0
+  });
+
+  const style = {
+    width: '20px',
+    height: '20px',
+    color: '#fff',
+    background: '#00f',
+    borderRadius: '20px',
+    textAlign: 'center'
+  };
+
+  const style_partenaire = {
+    width: '20px',
+    height: '20px',
+    color: '#fff',
+    background: '#f00',
+    borderRadius: '20px',
+    textAlign: 'center'
+  };
+
+  const style_projet= {
+    width: '20px',
+    height: '20px',
+    color: '#fff',
+    background: '#0f0',
+    borderRadius: '20px',
+    textAlign: 'center'
+  };
+
+  const ClusterMarker = ({ longitude, latitude, pointCount }) => (
+    <Marker longitude={longitude} latitude={latitude}>
+      <div style={{ ...style, background: '#00f' }}>{pointCount}</div>
+    </Marker>
+  );
+   
+  const [gLocations, setGLocations] = useState([]);//managed state
+  const [isLoaded, setIsLoaded] = useState(false);//because usrSwr is himself a hook, so can't be called in anotther hook like USeeffect
+  console.log("hhhhhhhhh1");
+  useEffect(() => { 
+     console.log("hhhhhhhhh2");
+    setIsLoaded(true); //tips just for calling after useSwr outside useEffect hook 
+  }, [])
+  console.log("hhhhhhhhh3");
+  if (isLoaded){// so the target component is already mounted
+    console.log("hhhhhhhhh4");
+    const url = "http://gmv/geolocations/?_format=json"; console.log("hhhhhhhhh5");
+    const fetcher = (...args) => fetch(...args).then(response => response.json()); console.log("hhhhhhhhh6");
+    const { data, error } = useSwr(url, { fetcher }); console.log("hhhhhhhhh7");
+    console.log('This is your error', error);
+    const points = data.slice(0, 2000);
+     console.log("hhhhhhhhh8", gLocations);
+    setGLocations(getLocations(points));
+     console.log("hhhhhhhhh9", points);
+    //setIsLoaded(false); 
+  }
+  
+  return (
+    <div> bonjour {gLocations.length}
+    </div>
+    );
+}

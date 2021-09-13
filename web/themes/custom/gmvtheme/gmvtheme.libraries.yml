@@ -1,4 +1,9 @@
 global-styling:
+  js:
+      js/style.js: {}
   css:
     theme:
       css/style.css: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
