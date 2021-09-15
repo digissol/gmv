@@ -183,13 +183,13 @@ animate:
   version: 3.7.0
   css:
     component:
-      js/animate/animate.min.css: { minified: true }
+      #js/animate/animate.min.css: { minified: true }
 
 animate-global:
   version: VERSION
   css:
     theme:
-      css/theme/animations.css: { weight: 1 }
+      #css/theme/animations.css: { weight: 1 }
   dependencies:
     - cleanplus/animate
 
@@ -197,9 +197,9 @@ slideout:
   version: 0.1.12
   css:
     component:
-      js/slideout/slideout.css: { weight: 0 }
+      #js/slideout/slideout.css: { weight: 0 }
   js:
-    js/slideout/slideout.min.js: {}
+    #js/slideout/slideout.min.js: {}
   dependencies:
     - core/jquery
 
@@ -207,9 +207,9 @@ slideout-init:
   version: VERSION
   css:
     component:
-      css/components/slideout.css: { weight: 0 }
+     # css/components/slideout.css: { weight: 0 }
   js:
-    js/init/slideout-init.js: {}
+    #js/init/slideout-init.js: {}
   dependencies:
     - cleanplus/slideout
 
@@ -1992,9 +1992,11 @@ fonts-pt-serif:
 mapcarto:
   css:
     theme: #The CSS category. base is loaded before theme category
-      reactjs/mapbox-clustering/src/index.css: { preprocess: false , minified: true } #weight sets the order within the category above
+      https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css:  { type: external } 
+      #reactjs/mapbox-clustering/src/index.css: { preprocess: false , minified: true } #weight sets the order within the category above
   
   js:
-    reactjs/mapbox-clustering/dist/app.bundle.js: { preprocess: false , minified: true }
+    #reactjs/mapbox-clustering/dist/app.bundle.js: { preprocess: false , minified: true }
+    reactjs/react-map-gl-cluster/dist/app.bundle.js: { preprocess: false , minified: true }
   dependencies:
     - core/drupalSettings
