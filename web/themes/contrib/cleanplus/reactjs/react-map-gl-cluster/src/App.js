@@ -7,7 +7,7 @@ import { FaPiedPiperPp, FaProductHunt } from 'react-icons/fa';
 import "./App.css";
 import {ReactSearchAutocomplete} from "react-search-autocomplete";
 import useFetch from "./useFetch";
-import Select from "react-select";
+import Select, { components } from "react-select";
 
 export default function App() {
 
@@ -71,32 +71,85 @@ export default function App() {
 
   //terms taxonomy partners
   let partitems = []
+  let themaitems = [] //thematiques partenaires
+  let realitems = [] // type de realisations projet
   //let urlpartner = base+'/api/taxonomy_term/cateegorie_partenaire';
   let urlpartner = 'http://gmv/api/taxonomy_term/cateegorie_partenaire';
   console.log("urlpartner", urlpartner)
-  const {data:partners, isPending, error} = useFetch(urlpartner);
+  const {data:partners, isPendingpartners, errorpartners} = useFetch(urlpartner);
   console.log("partners:", partners);
   if(partners){
       partners.data.map((partner) => (
           partitems.push({ value : partner.attributes.drupal_internal__tid, label: partner.attributes.name})
       ));
   }
-   
+
+  //terms taxonomy realisations projets
+  let urltypereal = 'http://gmv/api/taxonomy_term/realisation';
+  console.log("urltypereal", urltypereal)
+  const {data:typereals, isPendingtypereals, errortypereals} = useFetch(urltypereal);
+  console.log("typereals:", typereals);
+  if(typereals){
+      typereals.data.map((typereal) => (
+          realitems.push({ value : typereal.attributes.drupal_internal__tid, label: typereal.attributes.name})
+      ));
+  }
+
+  //terms taxonomy thematiques partners
+  let urlthema = 'http://gmv/api/taxonomy_term/thematique';
+  console.log("urlthema", urlthema)
+  const {data:themas, isPendingthemas, errorthemas} = useFetch(urlthema);
+  console.log("themas:", themas);
+  if(themas){
+      themas.data.map((thema) => (
+          themaitems.push({ value : thema.attributes.drupal_internal__tid, label: thema.attributes.name})
+      ));
+  }
+  
   const [name, setName] = useState('');
   const [selectedOption, setselectedOption] = useState('');
+  const [selectedOptionTypeReal, setselectedOptionTypeReal] = useState(null);
+  const [selectedOptionThema, setselectedOptionThema] = useState('');
 
   var urlbase = "http://gmv/geolocations/?_format=json"
   const [url, setUrl] = useState(urlbase);
 
-  const handleChangeSelect = (selectedOption) => {
-      
+  const handleChangeSelect = (selectedOption) => { 
        //new url
        var newurl = urlbase + "&field_categorie_target_id=" + selectedOption.value;
        setUrl(newurl);
        setselectedOption(selectedOption);
        console.log("new url", newurl);
         
-      };
+  };
+
+  //type realisations projet
+  const handleChangeTypeReal = (selectedOption) => { 
+       //new url
+       console.log("selected multi Option", selectedOption)
+       let joinquery = selectedOption.map( (elt, index) => {
+        console.log("selected multi Option elt", elt)
+        return `field_type_realisation_target_id\[`+index + `\]=`+elt.value;
+       });
+       console.log("selected multi Option elt", joinquery);
+       let newurl = urlbase.concat("&", joinquery.join('&'));
+       console.log("selected multi Option joinquery", newurl);
+       setUrl(newurl);
+       //setselectedOptionTypeReal(selected);
+       console.log("new url", newurl);
+        
+  };
+
+  //thematique partenaire
+  const handleChangeThema = (selectedOption) => { 
+       //new url
+       var newurl = urlbase + "&field_thematique_target_id=" + selectedOption.value;
+       setUrl(newurl);
+       setselectedOptionThema(selectedOption);
+       console.log("new url", newurl);
+        
+  };
+
   const handleSubmit = () => {
     // the item selected
     /*console.log(item);
@@ -116,6 +169,21 @@ export default function App() {
     const keyword = e.target.value;
     setName(keyword);
   };
+
+  const Option = (props) => {
+  return (
+    <div>
+      <components.Option {...props}>
+        <input
+          type="checkbox"
+          checked={props.isSelected}
+          onChange={() => null}
+        />{" "}
+        <label>{props.label}</label>
+      </components.Option>
+    </div>
+  );
+};
 
     // all geolocations
   var glocations_restruct = [];
@@ -183,23 +251,52 @@ export default function App() {
 
   
 return (
+  <React.StrictMode>
   <div className="carto"> 
      <div className="row filtering">       
 
-              <label>Par catégorie</label>
+             
               <div className="col-md-3">
+               <label>Par catégorie</label>
                   <Select options={partitems}
                   value={selectedOption}
                   onChange={handleChangeSelect}
+                  placeholder="Sélectionner"
                   />
               </div>
-              <div className="col-md-3 offset-md-2">
+             
+              <div className="col-md-3">
+               <label>Par thématique</label>
+                  <Select options={themaitems}
+                  value={selectedOptionThema}
+                  onChange={handleChangeThema}
+                  placeholder="Sélectionner"
+                  />
+              </div>
+               
+              <div className="col-md-3">
+              <label>Par type de réalisation</label>
+                  <Select
+                 isMulti
+                  name="typerealisations"
+                  options={realitems}
+                  className="basic-multi-select"
+                  classNamePrefix="select"
+                  placeholder="Sélectionner"
+                
+                  
+                 
+                  onChange={handleChangeTypeReal}
+                 
+                  />
+              </div>
+              <div className="col-md-3">
                 <input
                     type="search"
                     value={name}
                     //onChange={handleNameChange}
                     className="input"
-                    placeholder=""
+                    placeholder="Saisir un mot.."
                 />            
               </div>
               <div className="col-md-3">
@@ -264,5 +361,5 @@ return (
       </MapGL>
      </div> 
     </div> 
-  );
+  </React.StrictMode>);
 }
