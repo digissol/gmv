@@ -1,0 +1,32 @@
+uuid: 3d93b62c-faaf-42cb-bbc9-0b1d5b3bda4b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.realisations
+  module:
+    - ctools
+    - views
+  theme:
+    - cleanplus
+id: views_block__realisations_block_2
+theme: cleanplus
+region: sidebar_first
+weight: -8
+provider: null
+plugin: 'views_block:realisations-block_2'
+settings:
+  id: 'views_block:realisations-block_2'
+  label: 'Dernières réalisations'
+  provider: views
+  label_display: visible
+  views_label: 'Dernières réalisations'
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      realisation: realisation
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

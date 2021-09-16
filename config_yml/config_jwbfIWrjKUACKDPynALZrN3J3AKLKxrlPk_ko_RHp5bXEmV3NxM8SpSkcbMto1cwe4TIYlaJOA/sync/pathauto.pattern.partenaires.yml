@@ -1,0 +1,23 @@
+uuid: ea49c9f5-cbba-4e6f-8bc0-f7cec245474f
+langcode: fr
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: partenaires
+label: Partenaires
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:name]'
+selection_criteria:
+  b38ef2c4-8c28-46d2-b10d-11aef201355b:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      partenaire: partenaire
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: b38ef2c4-8c28-46d2-b10d-11aef201355b
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,19 @@
+uuid: 3c9ae6b4-582d-4271-a32f-7436c392be92
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_nom_point_focal
+    - group.type.partenaire
+id: group.partenaire.field_nom_point_focal
+field_name: field_nom_point_focal
+entity_type: group
+bundle: partenaire
+label: 'NOM POINT FOCAL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

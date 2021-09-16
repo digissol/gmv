@@ -1,0 +1,29 @@
+uuid: c85071f6-49ae-4318-b38d-87dd29a77911
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.document.field_categorie
+    - field.field.node.document.field_description
+    - field.field.node.document.field_document
+    - field.field.node.document.field_thematique
+    - node.type.document
+  module:
+    - user
+id: node.document.teaser
+targetEntityType: node
+bundle: document
+mode: teaser
+content:
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_categorie: true
+  field_description: true
+  field_document: true
+  field_thematique: true
+  langcode: true

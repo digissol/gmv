@@ -1,0 +1,87 @@
+uuid: e46381af-edff-4dd2-badd-9a1a3819fa7c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.file_entity_browser
+  module:
+    - dropzonejs_eb_widget
+    - views
+name: images
+label: Images
+display: iframe
+display_configuration:
+  width: '650'
+  height: '500'
+  link_text: 'Sélectionner les entités'
+  auto_open: true
+selection_display: multi_step_display
+selection_display_configuration:
+  entity_type: file
+  display: thumbnail
+  display_settings:
+    image_style: file_entity_browser_thumbnail
+  select_text: 'Use selected'
+  selection_hidden: false
+widget_selector: tabs
+widget_selector_configuration: {  }
+widgets:
+  52a4c6d1-c1a1-4b40-a176-6d0853193fd8:
+    settings:
+      view: file_entity_browser
+      view_display: entity_browser_1
+      submit_text: 'Sélectionner les entités'
+      auto_select: false
+    uuid: 52a4c6d1-c1a1-4b40-a176-6d0853193fd8
+    weight: 1
+    label: view
+    id: view
+  6a22c4a3-e466-48ef-a7c3-444a7f40c67f:
+    settings:
+      extensions: 'jpg jpeg png gif'
+      media_type: image
+      upload_location: 'public://'
+      multiple: '1'
+      submit_text: 'Sélectionner des fichiers'
+    uuid: 6a22c4a3-e466-48ef-a7c3-444a7f40c67f
+    weight: 2
+    label: media_image_upload
+    id: media_image_upload
+  c94fd2bb-2b72-4bf7-aa38-ff1a990fcafe:
+    settings:
+      upload_location: 'public://'
+      multiple: true
+      submit_text: 'Sélectionner des fichiers'
+      extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
+    uuid: c94fd2bb-2b72-4bf7-aa38-ff1a990fcafe
+    weight: 3
+    label: upload
+    id: upload
+  b97255b1-f51a-4f6d-89cf-f05392e76f9a:
+    settings:
+      upload_location: 'public://'
+      multiple: true
+      submit_text: 'Sélectionner des fichiers'
+      extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
+    uuid: b97255b1-f51a-4f6d-89cf-f05392e76f9a
+    weight: 4
+    label: upload
+    id: upload
+  423813e9-0add-4095-8e42-6473b49ecc58:
+    settings:
+      upload_location: 'public://[date:custom:Y]-[date:custom:m]'
+      dropzone_description: 'Drop files here to upload them'
+      max_filesize: 300M
+      extensions: 'jpg jpeg gif png txt doc xls pdf ppt pps odt ods odp'
+      clientside_resize: false
+      resize_width: null
+      resize_height: null
+      resize_quality: !!float 1
+      resize_method: contain
+      thumbnail_method: contain
+      submit_text: 'Sélectionner les entités'
+      auto_select: false
+    uuid: 423813e9-0add-4095-8e42-6473b49ecc58
+    weight: 5
+    label: 'Images chargées'
+    id: dropzonejs

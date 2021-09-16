@@ -1,0 +1,20 @@
+uuid: 11ab3a52-3dce-453a-8fed-96286c07814b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.photo
+  module:
+    - path
+id: node.photo.path
+field_name: path
+entity_type: node
+bundle: photo
+label: 'Alias d''URL'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

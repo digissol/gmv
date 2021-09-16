@@ -1,0 +1,18 @@
+uuid: c301b464-a6e8-4f9a-8bc6-42415731959c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+id: group.partenaire.label
+field_name: label
+entity_type: group
+bundle: partenaire
+label: Titre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

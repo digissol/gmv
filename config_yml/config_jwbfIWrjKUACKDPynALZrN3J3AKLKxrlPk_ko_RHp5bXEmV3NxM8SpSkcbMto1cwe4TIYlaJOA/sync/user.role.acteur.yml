@@ -1,0 +1,16 @@
+uuid: b6249336-9b77-44ba-ae9b-4c1ec43ef032
+langcode: fr
+status: true
+dependencies: {  }
+id: acteur
+label: Acteur
+weight: 5
+is_admin: null
+permissions:
+  - 'access in-place editing'
+  - 'create documents content'
+  - 'create projet content'
+  - 'delete own projet content'
+  - 'edit own projet content'
+  - 'use editorial transition create_new_draft'
+  - 'view own unpublished content'

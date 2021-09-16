@@ -1,0 +1,20 @@
+uuid: 12e0edc9-3997-4d26-940a-2f420d5b5f6f
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - cleanplus
+_core:
+  default_config_hash: 1zcgDbspYK0_-p6LN7Ie4Hx9mxb2bRRVkjsNR-BgP7c
+id: cleanplus_local_actions
+theme: cleanplus
+region: content
+weight: -11
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

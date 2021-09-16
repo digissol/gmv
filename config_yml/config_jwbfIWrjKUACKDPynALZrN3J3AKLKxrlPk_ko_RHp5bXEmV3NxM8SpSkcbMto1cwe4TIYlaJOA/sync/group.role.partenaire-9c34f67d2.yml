@@ -1,0 +1,20 @@
+uuid: 1579def0-4905-456d-bf6e-f310dba7b3d7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+  enforced:
+    config:
+      - user.role.ambassadeur
+id: partenaire-9c34f67d2
+label: Ambassadeur
+weight: 7
+internal: true
+audience: outsider
+group_type: partenaire
+permissions_ui: false
+permissions:
+  - 'join group'
+  - 'request group membership'
+  - 'view group'

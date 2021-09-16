@@ -1,0 +1,21 @@
+uuid: fae5cbb9-df4b-4b86-9a86-42e71fb24f0b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_domaines_d_intervention
+    - group.type.partenaire
+  module:
+    - text
+id: group.partenaire.field_domaines_d_intervention
+field_name: field_domaines_d_intervention
+entity_type: group
+bundle: partenaire
+label: 'DOMAINE D''INTERVENTION'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,26 @@
+uuid: 35f15c9c-0e85-427f-90e5-2e2f7bafdfc6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+  enforced:
+    config:
+      - user.role.gestionnaire
+id: partenaire-f2da5d9f1
+label: Gestionnaire
+weight: 3
+internal: true
+audience: outsider
+group_type: partenaire
+permissions_ui: false
+permissions:
+  - 'administer group'
+  - 'administer members'
+  - 'delete group'
+  - 'edit group'
+  - 'join group'
+  - 'view any unpublished group'
+  - 'view group'
+  - 'view group_membership content'
+  - 'view own unpublished group'

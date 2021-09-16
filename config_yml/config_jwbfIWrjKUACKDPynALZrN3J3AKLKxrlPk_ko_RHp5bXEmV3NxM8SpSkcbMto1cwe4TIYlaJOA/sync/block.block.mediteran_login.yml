@@ -1,0 +1,22 @@
+uuid: 94b66f02-3dd9-46c9-b443-c909ede11df1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - mediteran
+_core:
+  default_config_hash: bGmRikKJr9B_aoqjkbggZT5hRR2s9Lk-AicyI1jzBxc
+id: mediteran_login
+theme: mediteran
+region: content
+weight: 10
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'Connexion utilisateur'
+  provider: user
+  label_display: visible
+visibility: {  }

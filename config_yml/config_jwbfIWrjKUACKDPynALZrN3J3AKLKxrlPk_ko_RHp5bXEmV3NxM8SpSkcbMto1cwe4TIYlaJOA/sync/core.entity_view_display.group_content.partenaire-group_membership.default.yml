@@ -1,0 +1,24 @@
+uuid: 8930e516-32bf-4316-9711-1545fc612a2c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.group_content.partenaire-group_membership.group_roles
+    - group.content_type.partenaire-group_membership
+id: group_content.partenaire-group_membership.default
+targetEntityType: group_content
+bundle: partenaire-group_membership
+mode: default
+content:
+  group_roles:
+    label: above
+    type: entity_reference_label
+    settings:
+      link: false
+    weight: -4
+    third_party_settings: {  }
+    region: content
+hidden:
+  entity_id: true
+  langcode: true
+  uid: true

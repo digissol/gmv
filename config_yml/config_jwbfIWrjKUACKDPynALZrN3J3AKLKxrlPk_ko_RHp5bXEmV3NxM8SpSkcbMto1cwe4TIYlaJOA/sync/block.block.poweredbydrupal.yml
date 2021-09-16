@@ -1,0 +1,20 @@
+uuid: d54a13d4-ffb1-414c-89a8-7a5f383f9d5a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cleanplus
+id: poweredbydrupal
+theme: cleanplus
+region: sub_footer_first
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

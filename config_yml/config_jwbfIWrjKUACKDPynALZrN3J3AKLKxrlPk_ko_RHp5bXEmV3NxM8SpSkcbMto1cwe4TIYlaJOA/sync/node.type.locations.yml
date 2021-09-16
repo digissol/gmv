@@ -1,0 +1,18 @@
+uuid: d7ddb6a7-407e-465d-8e4b-9be0ca60f39d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Locations
+type: locations
+description: "Permettra de renseigner des coordonnées  de lieux précis via avec une geolocalisation visuelle sur carte.\r\nCes données seront visualisés côté front via reactjs et mapbox par exemple\r\n"
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: true

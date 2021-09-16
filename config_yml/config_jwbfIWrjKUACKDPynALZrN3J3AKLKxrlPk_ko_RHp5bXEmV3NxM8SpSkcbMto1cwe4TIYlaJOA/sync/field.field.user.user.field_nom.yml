@@ -1,0 +1,29 @@
+uuid: f6190606-32e4-41f5-8eea-15adc31eae1a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_nom
+  module:
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form:
+      point_focal: point_focal
+      acteur: acteur
+      expert: expert
+      authenticated: 0
+    user_additional_register_form_required: null
+id: user.user.field_nom
+field_name: field_nom
+entity_type: user
+bundle: user
+label: Nom
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

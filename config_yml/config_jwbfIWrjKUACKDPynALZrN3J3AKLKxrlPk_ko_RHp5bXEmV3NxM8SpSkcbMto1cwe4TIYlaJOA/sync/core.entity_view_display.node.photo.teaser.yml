@@ -1,0 +1,35 @@
+uuid: d27abf34-7653-4c77-bbb2-a2263f97f613
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.photo.body
+    - field.field.node.photo.field_commentaire
+    - field.field.node.photo.field_image
+    - node.type.photo
+  module:
+    - text
+    - user
+id: node.photo.teaser
+targetEntityType: node
+bundle: photo
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_commentaire: true
+  field_image: true
+  langcode: true

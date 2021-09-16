@@ -1,0 +1,57 @@
+uuid: c6045b27-c2a2-4077-9553-d0a0dd9e80fc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.realisation.body
+    - field.field.node.realisation.field_annee
+    - field.field.node.realisation.field_autres_lieux
+    - field.field.node.realisation.field_benefices
+    - field.field.node.realisation.field_image
+    - field.field.node.realisation.field_investissement
+    - field.field.node.realisation.field_localisation
+    - field.field.node.realisation.field_nombre_d_institutions_conc
+    - field.field.node.realisation.field_nombre_de_beneficiaires_fe
+    - field.field.node.realisation.field_nombre_de_beneficiaires_ho
+    - field.field.node.realisation.field_pays
+    - field.field.node.realisation.field_ressources_financieres
+    - field.field.node.realisation.field_superficie
+    - field.field.node.realisation.field_type_realisation
+    - node.type.realisation
+  module:
+    - text
+    - user
+id: node.realisation.teaser
+targetEntityType: node
+bundle: realisation
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_annee: true
+  field_autres_lieux: true
+  field_benefices: true
+  field_image: true
+  field_investissement: true
+  field_localisation: true
+  field_nombre_d_institutions_conc: true
+  field_nombre_de_beneficiaires_fe: true
+  field_nombre_de_beneficiaires_ho: true
+  field_pays: true
+  field_ressources_financieres: true
+  field_superficie: true
+  field_type_realisation: true
+  langcode: true

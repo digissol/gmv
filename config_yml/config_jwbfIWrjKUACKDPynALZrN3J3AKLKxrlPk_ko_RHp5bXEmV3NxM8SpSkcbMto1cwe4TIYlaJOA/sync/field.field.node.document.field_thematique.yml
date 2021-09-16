@@ -1,0 +1,29 @@
+uuid: a40703c8-2d2f-43f6-a20c-551d59511cfa
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_thematique
+    - node.type.document
+    - taxonomy.vocabulary.thematique
+id: node.document.field_thematique
+field_name: field_thematique
+entity_type: node
+bundle: document
+label: Thématique
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      thematique: thematique
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

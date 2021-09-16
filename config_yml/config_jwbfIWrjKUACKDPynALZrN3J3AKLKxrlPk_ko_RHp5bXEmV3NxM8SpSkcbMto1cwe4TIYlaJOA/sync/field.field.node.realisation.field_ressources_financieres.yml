@@ -1,0 +1,23 @@
+uuid: e0e77910-3aad-4ad4-8aea-c43ae46c3d08
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ressources_financieres
+    - node.type.realisation
+id: node.realisation.field_ressources_financieres
+field_name: field_ressources_financieres
+entity_type: node
+bundle: realisation
+label: 'Ressources financières'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

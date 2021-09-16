@@ -1,0 +1,32 @@
+uuid: ab7c095b-f66c-44bf-accb-1151f62e4e66
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_position
+    - node.type.locations
+  module:
+    - geofield
+id: node.locations.field_position
+field_name: field_position
+entity_type: node
+bundle: locations
+label: Position
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 010100000000000000005019c09b3c65355d872c40
+    geo_type: Point
+    lat: 14.264383
+    lon: -6.328125
+    left: -6.328125
+    top: 14.264383
+    right: -6.328125
+    bottom: 14.264383
+    geohash: efe3puzbpcxz
+    latlon: '14.264383,-6.328125'
+default_value_callback: ''
+settings: {  }
+field_type: geofield

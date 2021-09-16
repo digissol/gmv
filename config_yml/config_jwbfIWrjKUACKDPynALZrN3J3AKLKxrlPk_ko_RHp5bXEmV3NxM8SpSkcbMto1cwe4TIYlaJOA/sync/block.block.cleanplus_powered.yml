@@ -1,0 +1,22 @@
+uuid: ca889aa9-3993-4162-a323-45dce6fdfd93
+langcode: fr
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - cleanplus
+_core:
+  default_config_hash: Pc5DuPw4eCbkbC8skzhE62ioFOW6eQH7zXzbd55M9c0
+id: cleanplus_powered
+theme: cleanplus
+region: footer_bottom_fourth
+weight: -8
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

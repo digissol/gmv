@@ -1,0 +1,23 @@
+uuid: 66aa44cd-e40c-4cbc-aca8-c6f390205d6c
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.inscription
+  module:
+    - text
+id: node.inscription.body
+field_name: body
+entity_type: node
+bundle: inscription
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

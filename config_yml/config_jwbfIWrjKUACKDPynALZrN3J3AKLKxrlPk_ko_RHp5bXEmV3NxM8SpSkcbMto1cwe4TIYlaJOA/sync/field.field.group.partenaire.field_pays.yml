@@ -1,0 +1,22 @@
+uuid: 88517c1e-2272-48cb-bccb-01f7ebd8e7c1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_pays
+    - group.type.partenaire
+  module:
+    - address
+id: group.partenaire.field_pays
+field_name: field_pays
+entity_type: group
+bundle: partenaire
+label: PAYS
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country

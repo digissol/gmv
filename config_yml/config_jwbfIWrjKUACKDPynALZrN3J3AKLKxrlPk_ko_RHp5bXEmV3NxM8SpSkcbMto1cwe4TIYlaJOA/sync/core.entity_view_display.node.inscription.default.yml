@@ -1,0 +1,43 @@
+uuid: 555dab90-8571-4071-8561-4996da07824a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.inscription.body
+    - field.field.node.inscription.field_lien_d_inscription
+    - node.type.inscription
+  module:
+    - link
+    - text
+    - user
+id: node.inscription.default
+targetEntityType: node
+bundle: inscription
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_lien_d_inscription:
+    weight: 102
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  links:
+    weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

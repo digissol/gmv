@@ -1,0 +1,22 @@
+uuid: 3a64a573-ffe6-4640-91fb-1efe8cb46cdb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.partenaire
+id: taxonomy_term.partenaire.status
+field_name: status
+entity_type: taxonomy_term
+bundle: partenaire
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

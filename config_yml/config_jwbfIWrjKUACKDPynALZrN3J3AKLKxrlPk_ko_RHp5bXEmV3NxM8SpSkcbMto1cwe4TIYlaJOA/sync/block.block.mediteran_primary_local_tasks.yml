@@ -1,0 +1,22 @@
+uuid: dedf1d7a-85ac-4c38-99ea-25bb09e62855
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - mediteran
+_core:
+  default_config_hash: y3GVIOjzxY2LBDS8YVElU7T_Ixuc_YDmRUJND6ZVrc0
+id: mediteran_primary_local_tasks
+theme: mediteran
+region: header
+weight: 0
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: false
+visibility: {  }

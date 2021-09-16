@@ -1,0 +1,57 @@
+uuid: e82bacc1-83df-4b5b-a152-10ebbac82010
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.document.field_categorie
+    - field.field.node.document.field_description
+    - field.field.node.document.field_document
+    - field.field.node.document.field_thematique
+    - node.type.document
+  module:
+    - file
+    - text
+    - user
+id: node.document.default
+targetEntityType: node
+bundle: document
+mode: default
+content:
+  field_categorie:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_description:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_document:
+    weight: 1
+    label: hidden
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    type: file_default
+    region: content
+  field_thematique:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

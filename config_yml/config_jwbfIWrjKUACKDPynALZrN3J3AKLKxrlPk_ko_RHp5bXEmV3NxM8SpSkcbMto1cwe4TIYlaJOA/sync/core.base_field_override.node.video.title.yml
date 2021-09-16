@@ -1,0 +1,18 @@
+uuid: 6e11308a-55c5-4a85-8959-80aff4507852
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.video
+id: node.video.title
+field_name: title
+entity_type: node
+bundle: video
+label: Titre
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

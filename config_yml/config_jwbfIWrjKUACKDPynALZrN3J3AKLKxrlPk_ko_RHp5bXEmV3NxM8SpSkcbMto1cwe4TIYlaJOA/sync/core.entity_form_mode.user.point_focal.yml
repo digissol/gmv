@@ -1,0 +1,10 @@
+uuid: b0b78e06-73f8-4be6-8635-0478c47c5682
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.point_focal
+label: 'Point focal'
+targetEntityType: user
+cache: true

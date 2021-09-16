@@ -1,0 +1,44 @@
+uuid: a5533003-f748-4161-bae1-96743ba23807
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+id: partenaire-point_focal
+label: 'Point focal'
+weight: 8
+internal: false
+audience: member
+group_type: partenaire
+permissions_ui: true
+permissions:
+  - 'access content overview'
+  - 'administer group'
+  - 'administer members'
+  - 'administer membership requests'
+  - 'create group_node:annonce entity'
+  - 'create group_node:document entity'
+  - 'create group_node:realisation entity'
+  - 'delete any group_node:annonce entity'
+  - 'delete any group_node:document entity'
+  - 'delete any group_node:realisation entity'
+  - 'delete own group_node:annonce entity'
+  - 'delete own group_node:document entity'
+  - 'delete own group_node:realisation entity'
+  - 'edit group'
+  - 'update any group_node:annonce entity'
+  - 'update any group_node:document entity'
+  - 'update any group_node:realisation entity'
+  - 'update own group_membership content'
+  - 'update own group_node:annonce entity'
+  - 'update own group_node:document entity'
+  - 'update own group_node:realisation entity'
+  - 'view group'
+  - 'view group_membership content'
+  - 'view group_node:annonce entity'
+  - 'view group_node:document entity'
+  - 'view group_node:realisation entity'
+  - 'view own unpublished group'
+  - 'view unpublished group_node:annonce entity'
+  - 'view unpublished group_node:document entity'
+  - 'view unpublished group_node:realisation entity'

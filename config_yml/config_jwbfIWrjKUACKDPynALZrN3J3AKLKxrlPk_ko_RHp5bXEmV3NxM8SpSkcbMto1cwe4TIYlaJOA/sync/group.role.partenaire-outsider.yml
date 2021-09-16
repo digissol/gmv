@@ -1,0 +1,19 @@
+uuid: 42c4be27-1e44-4477-b683-f12fae9cd4c9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+id: partenaire-outsider
+label: Outsider
+weight: -101
+internal: true
+audience: outsider
+group_type: partenaire
+permissions_ui: true
+permissions:
+  - 'request group membership'
+  - 'view group'
+  - 'view group_node:annonce entity'
+  - 'view group_node:document entity'
+  - 'view group_node:realisation entity'

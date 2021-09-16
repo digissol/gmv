@@ -1,0 +1,22 @@
+uuid: c1ad7bb5-1b09-448d-ab39-32b9450fa937
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.inscription
+id: node.inscription.status
+field_name: status
+entity_type: node
+bundle: inscription
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

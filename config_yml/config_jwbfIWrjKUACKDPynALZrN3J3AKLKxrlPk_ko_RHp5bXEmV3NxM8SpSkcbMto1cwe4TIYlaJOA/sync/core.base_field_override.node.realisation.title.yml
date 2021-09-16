@@ -1,0 +1,18 @@
+uuid: 4c691f8d-d205-424b-ae1b-56f031206893
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.realisation
+id: node.realisation.title
+field_name: title
+entity_type: node
+bundle: realisation
+label: Titre
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

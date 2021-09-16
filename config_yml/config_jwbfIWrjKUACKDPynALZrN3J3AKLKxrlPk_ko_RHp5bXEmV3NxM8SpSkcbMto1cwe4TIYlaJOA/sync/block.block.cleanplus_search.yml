@@ -1,0 +1,29 @@
+uuid: a0c4401d-f332-4c9f-9296-ed1a3824d483
+langcode: fr
+status: true
+dependencies:
+  module:
+    - search
+    - system
+  theme:
+    - cleanplus
+_core:
+  default_config_hash: QSG-6JUwig7FfbCDqygSOtreCey1Q6pGAAj2df3CE6w
+id: cleanplus_search
+theme: cleanplus
+region: sidebar_second
+weight: -24
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: Search
+  provider: search
+  label_display: visible
+  page_id: ''
+visibility:
+  request_path:
+    id: request_path
+    pages: /shortcodes
+    negate: false
+    context_mapping: {  }

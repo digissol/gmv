@@ -1,0 +1,14 @@
+uuid: 9b578b35-005b-48f4-8326-758df24d1e39
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.point_focal
+  module:
+    - user
+id: user_add_role_action.point_focal
+label: 'Ajouter le rôle Point focal aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: point_focal

@@ -1,0 +1,22 @@
+uuid: f1f7024d-05ff-41f4-997a-224d2cd214e4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.inscription
+id: node.inscription.sticky
+field_name: sticky
+entity_type: node
+bundle: inscription
+label: 'Epinglé en haut des listes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

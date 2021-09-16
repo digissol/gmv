@@ -1,0 +1,31 @@
+uuid: 0b5d0cd9-9824-49ed-b741-7c06e230ec7e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_liste_role
+  module:
+    - multiple_registration
+    - options
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form:
+      authenticated: 0
+      point_focal: 0
+      acteur: 0
+    user_additional_register_form_required: null
+id: user.user.field_liste_role
+field_name: field_liste_role
+entity_type: user
+bundle: user
+label: 'Choisissez le rôle que vous souhaitez exercer sur la plateforme'
+description: 'Un acteur participe aux discussions sur la plateforme et créé des contenus pour l''organisation dont il est membre. Un point focal ajoute son organisation et gère les membres et les contenus de cette organisation.'
+required: true
+translatable: false
+default_value:
+  -
+    value: '01'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

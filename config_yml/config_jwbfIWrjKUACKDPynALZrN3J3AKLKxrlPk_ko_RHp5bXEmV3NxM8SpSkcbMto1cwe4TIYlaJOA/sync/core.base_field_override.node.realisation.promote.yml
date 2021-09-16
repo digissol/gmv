@@ -1,0 +1,22 @@
+uuid: ff83c7b7-1cac-429f-b107-78e91441f863
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.realisation
+id: node.realisation.promote
+field_name: promote
+entity_type: node
+bundle: realisation
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

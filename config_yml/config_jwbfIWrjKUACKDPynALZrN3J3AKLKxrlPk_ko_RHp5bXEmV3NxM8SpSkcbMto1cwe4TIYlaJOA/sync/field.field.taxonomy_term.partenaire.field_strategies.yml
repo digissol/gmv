@@ -1,0 +1,21 @@
+uuid: 777a5297-6da3-498a-bf2b-aed57f2372d3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_strategies
+    - taxonomy.vocabulary.partenaire
+  module:
+    - text
+id: taxonomy_term.partenaire.field_strategies
+field_name: field_strategies
+entity_type: taxonomy_term
+bundle: partenaire
+label: Stratégies
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

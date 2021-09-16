@@ -1,0 +1,32 @@
+uuid: 8728b4ef-96a0-4b17-8466-d8e972ebbede
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_localisation
+    - node.type.realisation
+  module:
+    - geofield
+id: node.realisation.field_localisation
+field_name: field_localisation
+entity_type: node
+bundle: realisation
+label: Localisation
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 0101000000d07b630800be24c0689599d2fa632740
+    geo_type: Point
+    lat: 11.695273
+    lon: -10.371094
+    left: -10.371094
+    top: 11.695273
+    right: -10.371094
+    bottom: 11.695273
+    geohash: ef0decpczuzu
+    latlon: '11.695273,-10.371094'
+default_value_callback: ''
+settings: {  }
+field_type: geofield

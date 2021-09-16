@@ -1,0 +1,23 @@
+uuid: 3eebc331-da93-4182-9119-2d39d3c09a66
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_annee
+    - node.type.realisation
+id: node.realisation.field_annee
+field_name: field_annee
+entity_type: node
+bundle: realisation
+label: Année
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

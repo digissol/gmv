@@ -1,0 +1,25 @@
+uuid: 5260749f-7ceb-479b-ab8f-58b7d2d7e1df
+langcode: fr
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.browse_files
+  module:
+    - entity_embed
+    - file
+    - image
+label: 'File browser'
+id: files
+type_id: entity
+type_settings:
+  entity_type: file
+  bundles: {  }
+  display_plugins:
+    - 'image:image'
+  entity_browser: browse_files
+  entity_browser_settings:
+    display_review: false
+icon:
+  data: iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAACPklEQVRYhc2XvarqQBSFd5KxkaBgLGzFFIKgYq+IjY2PoL2FGp/AF7AUX8bnEBTtRRAFIZIfZ7JOc+M53ug9N/4vWEU2CesLe89kIgEAvVHyO8M/AoD9vBBC0LM7IkkSKYryXcAfjcdjxGIxRCKRpzoWi2E8HvuxkADA8zyKx+NkmibJskyMseuvcIc45+R5HqmqSvv9nmRZJgkAhBDEGCNZlmk2m1Emk3kKwGKxoFwuRwCIc06KopwDMMbIcRyS5ftnUwhBRHTWb9d1KRqNkhDiBPDwVWDbNvX7fUqlUpRKpcgwDLJt+/oDAMA5BxGBMQYhBO5Rr9cDEZ3ZMAwAgOM4UBQFRATOOQDgoQCcc2iaFgDQNA2c84sAL92IJEkK1EIDCCFOA/a3FEWhZrMZqDebzfPN56fCtGA6nSKdTiObzWK5XF68x7IsGIaBZDIJTdPQ6/VgWRYAwHXd22dgs9lA1/VTX3Vdx2q1+uc8+CG+jsfjbQC2baNWqwWGq1AoYLvdBkKOx+NFqJsAPM9Du90OhPsul8swTRMAMJ/Pkc/nUSwWsV6vLwIwxsIBjEajq+G+K5UKhsMhksnkqVYqlbDb7QJtCQUwmUwQiUR+BbjmarWKw+FwG8B8Pkcikbg53Hej0YDjOOEAttststns3eG+W63WaVX8CuA4Dur1+sPCfXc6nf8D6Ha7Dw/3PRgMAgBn54FX6mnngbD6DABJkkhV1ZeFqqr6/Wn2N4m3Hst9snf8mJwBvEOfMYTv1BfgNIcBtqw3YwAAAABJRU5ErkJggg==
+  uri: 'public://embed_buttons/img icon.png'
+icon_uuid: null

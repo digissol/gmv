@@ -1,0 +1,17 @@
+uuid: 2f9d4b01-9e75-4c88-b83f-34c6f1784a9d
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Inscription
+type: inscription
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

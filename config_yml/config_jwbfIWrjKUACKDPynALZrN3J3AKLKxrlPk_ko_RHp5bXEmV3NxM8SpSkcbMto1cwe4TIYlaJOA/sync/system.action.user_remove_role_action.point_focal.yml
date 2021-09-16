@@ -1,0 +1,14 @@
+uuid: 6f99cf84-116c-4b6e-b0ae-1c04d587dd18
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.point_focal
+  module:
+    - user
+id: user_remove_role_action.point_focal
+label: 'Enlever le rôle Point focal des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: point_focal

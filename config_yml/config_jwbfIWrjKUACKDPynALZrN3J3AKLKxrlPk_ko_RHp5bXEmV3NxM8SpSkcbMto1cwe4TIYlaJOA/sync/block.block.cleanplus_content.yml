@@ -1,0 +1,27 @@
+uuid: 5c97487c-9aaa-4604-9491-106d8436355e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cleanplus
+_core:
+  default_config_hash: PNyN3LwQpHqoRfl9FEHrvQ4WeotwBcPLiPSmL8-1uEU
+id: cleanplus_content
+theme: cleanplus
+region: content
+weight: -8
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: true
+    context_mapping: {  }

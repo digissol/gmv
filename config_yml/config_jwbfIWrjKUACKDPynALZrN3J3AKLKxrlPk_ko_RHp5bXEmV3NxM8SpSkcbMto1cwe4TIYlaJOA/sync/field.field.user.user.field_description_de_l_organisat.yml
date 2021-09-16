@@ -1,0 +1,36 @@
+uuid: 84c66947-bcbc-4054-8278-6af85a1fa7a9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_description_de_l_organisat
+  module:
+    - multiple_registration
+    - text
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form:
+      authenticated: 0
+      point_focal: 0
+      acteur: 0
+      expert: 0
+    user_additional_register_form_required:
+      authenticated: 0
+      point_focal: 0
+      acteur: 0
+      expert: 0
+id: user.user.field_description_de_l_organisat
+field_name: field_description_de_l_organisat
+entity_type: user
+bundle: user
+label: 'Description de l''organisation'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+  required_summary: false
+field_type: text_with_summary

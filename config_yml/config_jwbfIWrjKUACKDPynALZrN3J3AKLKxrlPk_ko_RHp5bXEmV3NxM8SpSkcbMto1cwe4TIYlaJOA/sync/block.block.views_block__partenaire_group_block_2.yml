@@ -1,0 +1,33 @@
+uuid: 2c751593-f96b-4c05-b94e-ebfb9378f076
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.partenaire_group
+  module:
+    - ctools
+    - views
+  theme:
+    - cleanplus
+id: views_block__partenaire_group_block_2
+theme: cleanplus
+region: sidebar_first
+weight: -7
+provider: null
+plugin: 'views_block:partenaire_group-block_2'
+settings:
+  id: 'views_block:partenaire_group-block_2'
+  label: 'Dernières Organisations'
+  provider: views
+  label_display: visible
+  views_label: 'Dernières Organisations'
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      annonce: annonce
+      realisation: realisation
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

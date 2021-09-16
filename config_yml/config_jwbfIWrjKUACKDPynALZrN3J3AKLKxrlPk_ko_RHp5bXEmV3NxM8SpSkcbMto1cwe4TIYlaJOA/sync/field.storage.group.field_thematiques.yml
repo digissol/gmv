@@ -1,0 +1,20 @@
+uuid: 204eb63d-3c33-4799-9c79-aa66e0088b2e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - group
+    - taxonomy
+id: group.field_thematiques
+field_name: field_thematiques
+entity_type: group
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

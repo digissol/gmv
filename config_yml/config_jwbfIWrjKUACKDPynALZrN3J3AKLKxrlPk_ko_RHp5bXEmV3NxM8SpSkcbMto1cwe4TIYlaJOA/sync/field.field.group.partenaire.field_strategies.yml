@@ -1,0 +1,21 @@
+uuid: f53e6a06-87ef-478a-897a-66a4a89963a9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_strategies
+    - group.type.partenaire
+  module:
+    - text
+id: group.partenaire.field_strategies
+field_name: field_strategies
+entity_type: group
+bundle: partenaire
+label: STRATEGIES
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

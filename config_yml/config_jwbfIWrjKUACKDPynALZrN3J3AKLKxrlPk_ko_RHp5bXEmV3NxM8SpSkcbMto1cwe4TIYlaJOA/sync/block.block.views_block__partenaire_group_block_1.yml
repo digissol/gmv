@@ -1,0 +1,29 @@
+uuid: 508f49ff-119a-4a39-bbea-2765ffc5850d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.partenaire_group
+  module:
+    - system
+    - views
+  theme:
+    - cleanplus
+id: views_block__partenaire_group_block_1
+theme: cleanplus
+region: content_top
+weight: -8
+provider: null
+plugin: 'views_block:partenaire_group-block_1'
+settings:
+  id: 'views_block:partenaire_group-block_1'
+  label: 'Dernières Organisations'
+  provider: views
+  label_display: visible
+  views_label: 'Dernières Organisations'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

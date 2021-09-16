@@ -1,0 +1,18 @@
+uuid: 031952b6-b6f0-4d22-a577-1d4e85a944c4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - group
+_core:
+  default_config_hash: rk2G0ozgUlKP7ic1RRjMcXUmeZxXUKPV-q-brekIKMc
+id: group_content
+label: 'Contenu de groupe'
+type: 'canonical_entities:group_content'
+pattern: 'group/[group_content:group:id]/[group_content:pretty-path-key]/[group_content:id]'
+selection_criteria: {  }
+selection_logic: and
+weight: -5
+relationships:
+  'group_content:langcode:language':
+    label: Language

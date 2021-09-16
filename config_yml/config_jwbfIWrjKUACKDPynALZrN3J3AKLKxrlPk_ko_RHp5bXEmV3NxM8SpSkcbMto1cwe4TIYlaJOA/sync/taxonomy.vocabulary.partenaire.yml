@@ -1,0 +1,8 @@
+uuid: 1bc31e01-acd1-4e28-a840-4da24c11cd1d
+langcode: fr
+status: true
+dependencies: {  }
+name: Partenaire
+vid: partenaire
+description: ''
+weight: 0

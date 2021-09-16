@@ -1,0 +1,22 @@
+uuid: 75bea919-6749-4f9d-b76a-ee3fe97cc213
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - cleanplus
+_core:
+  default_config_hash: SQ8E3p--wIkYjx4v9tcXxChe5rCVkFuZj-Xar23s0iM
+id: cleanplus_local_tasks
+theme: cleanplus
+region: content
+weight: -10
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

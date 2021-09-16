@@ -1,0 +1,25 @@
+uuid: 4a80a8b6-cf5d-4f6a-b062-8c834b7a762e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+  enforced:
+    config:
+      - user.role.administrator
+id: partenaire-a416e6833
+label: Administrateur
+weight: 2
+internal: true
+audience: outsider
+group_type: partenaire
+permissions_ui: false
+permissions:
+  - 'administer group'
+  - 'administer members'
+  - 'delete group'
+  - 'edit group'
+  - 'join group'
+  - 'view any unpublished group'
+  - 'view group'
+  - 'view group_membership content'

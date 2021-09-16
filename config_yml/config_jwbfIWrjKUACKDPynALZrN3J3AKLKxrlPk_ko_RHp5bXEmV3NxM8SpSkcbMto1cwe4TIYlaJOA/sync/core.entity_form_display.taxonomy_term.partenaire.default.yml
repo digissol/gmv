@@ -1,0 +1,100 @@
+uuid: c8d55b4a-1c8a-4c73-90d6-d8ec3b04b494
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.partenaire.field_domaines_d_intervention
+    - field.field.taxonomy_term.partenaire.field_email
+    - field.field.taxonomy_term.partenaire.field_historique
+    - field.field.taxonomy_term.partenaire.field_logo
+    - field.field.taxonomy_term.partenaire.field_objectifs
+    - field.field.taxonomy_term.partenaire.field_strategies
+    - image.style.thumbnail
+    - taxonomy.vocabulary.partenaire
+  module:
+    - image
+    - path
+    - text
+id: taxonomy_term.partenaire.default
+targetEntityType: taxonomy_term
+bundle: partenaire
+mode: default
+content:
+  field_domaines_d_intervention:
+    weight: 8
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_email:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: email_default
+    region: content
+  field_historique:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_logo:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_objectifs:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_strategies:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  langcode:
+    type: language_select
+    weight: 6
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 9
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 7
+    region: content
+    third_party_settings: {  }
+hidden:
+  description: true

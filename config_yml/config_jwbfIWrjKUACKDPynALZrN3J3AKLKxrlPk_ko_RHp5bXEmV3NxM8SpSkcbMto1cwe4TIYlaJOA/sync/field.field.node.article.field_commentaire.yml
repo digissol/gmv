@@ -1,0 +1,33 @@
+uuid: 0f41a1b4-caae-4257-a44f-0d2f1d0f26f8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_commentaire
+    - node.type.article
+  module:
+    - comment
+id: node.article.field_commentaire
+field_name: field_commentaire
+entity_type: node
+bundle: article
+label: Commentaire
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    status: 2
+    cid: 0
+    last_comment_timestamp: 0
+    last_comment_name: null
+    last_comment_uid: 0
+    comment_count: 0
+default_value_callback: ''
+settings:
+  default_mode: 1
+  per_page: 50
+  anonymous: 0
+  form_location: true
+  preview: 1
+field_type: comment

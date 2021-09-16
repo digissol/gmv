@@ -1,0 +1,22 @@
+uuid: f92015ae-77c3-440d-a9d1-4ec32f86d335
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.inscription
+id: node.inscription.promote
+field_name: promote
+entity_type: node
+bundle: inscription
+label: 'Promu en page d''accueil'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

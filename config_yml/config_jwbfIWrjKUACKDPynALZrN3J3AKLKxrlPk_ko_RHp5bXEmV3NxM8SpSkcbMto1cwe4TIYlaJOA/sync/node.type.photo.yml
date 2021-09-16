@@ -1,0 +1,17 @@
+uuid: d1e5ef41-cb58-4382-9b59-174bd54e33d6
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Photo
+type: photo
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

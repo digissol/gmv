@@ -1,0 +1,19 @@
+uuid: d52dd017-1035-4bc1-b31b-d9b220a9c50b
+langcode: fr
+status: true
+dependencies:
+  module:
+    - text
+    - user
+id: user.field_description_de_l_organisat
+field_name: field_description_de_l_organisat
+entity_type: user
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

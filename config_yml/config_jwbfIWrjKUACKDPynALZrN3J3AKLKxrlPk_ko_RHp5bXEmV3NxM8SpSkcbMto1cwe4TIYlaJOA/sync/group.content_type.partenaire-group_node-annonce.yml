@@ -1,0 +1,19 @@
+uuid: fbdedc35-f600-4ed0-8700-d0e315127366
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+    - node.type.annonce
+  module:
+    - gnode
+    - node
+id: partenaire-group_node-annonce
+label: 'partenaire: Group node (Annonce)'
+description: 'Adds <em class="placeholder">Annonce</em> content to groups both publicly and privately.'
+group_type: partenaire
+content_plugin: 'group_node:annonce'
+plugin_config:
+  group_cardinality: 0
+  entity_cardinality: 1
+  use_creation_wizard: false

@@ -1,0 +1,15 @@
+uuid: 974b7c92-f1eb-4805-acd1-0d1b82550559
+langcode: fr
+status: true
+dependencies: {  }
+name: logo_275x275
+label: 'Logo 275x275'
+effects:
+  b63803ff-7def-414e-a26d-dfe326065cc0:
+    uuid: b63803ff-7def-414e-a26d-dfe326065cc0
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 275
+      height: 275
+      anchor: center-center

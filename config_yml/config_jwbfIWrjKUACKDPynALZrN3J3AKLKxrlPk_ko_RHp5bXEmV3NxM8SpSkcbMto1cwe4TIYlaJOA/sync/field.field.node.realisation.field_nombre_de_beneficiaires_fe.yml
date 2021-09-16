@@ -1,0 +1,23 @@
+uuid: 5d5d74f0-fbe7-487f-8ee9-fc00beb7d78d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nombre_de_beneficiaires_fe
+    - node.type.realisation
+id: node.realisation.field_nombre_de_beneficiaires_fe
+field_name: field_nombre_de_beneficiaires_fe
+entity_type: node
+bundle: realisation
+label: 'Nombre de bénéficiaires Femme'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

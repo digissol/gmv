@@ -1,0 +1,407 @@
+uuid: 37fed953-2b73-423b-b17c-14190448e1e4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.realisation.body
+    - field.field.node.realisation.field_annee
+    - field.field.node.realisation.field_autres_lieux
+    - field.field.node.realisation.field_benefices
+    - field.field.node.realisation.field_image
+    - field.field.node.realisation.field_investissement
+    - field.field.node.realisation.field_localisation
+    - field.field.node.realisation.field_nombre_d_institutions_conc
+    - field.field.node.realisation.field_nombre_de_beneficiaires_fe
+    - field.field.node.realisation.field_nombre_de_beneficiaires_ho
+    - field.field.node.realisation.field_pays
+    - field.field.node.realisation.field_ressources_financieres
+    - field.field.node.realisation.field_superficie
+    - field.field.node.realisation.field_type_realisation
+    - image.style.wide
+    - node.type.realisation
+  module:
+    - geofield
+    - image
+    - layout_builder
+    - layout_discovery
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          888b4556-935f-4fe0-a5cf-eaa08881ba22:
+            uuid: 888b4556-935f-4fe0-a5cf-eaa08881ba22
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_image'
+              formatter:
+                label: hidden
+                settings:
+                  image_style: wide
+                  image_link: ''
+                third_party_settings: {  }
+                type: image
+            additional: {  }
+            weight: 1
+          ba7b129e-ea5b-4f6e-8be6-adcc5c27c82d:
+            uuid: ba7b129e-ea5b-4f6e-8be6-adcc5c27c82d
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:body'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
+            weight: 4
+          fd9edc5a-cdda-4ada-9ad1-80df44e1e936:
+            uuid: fd9edc5a-cdda-4ada-9ad1-80df44e1e936
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_type_realisation'
+              formatter:
+                label: inline
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: 3
+          81190ebb-af55-442d-b582-470a9e5c1529:
+            uuid: 81190ebb-af55-442d-b582-470a9e5c1529
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_localisation'
+              formatter:
+                label: above
+                settings:
+                  output_format: wkt
+                  output_escape: true
+                third_party_settings: {  }
+                type: geofield_default
+            additional: {  }
+            weight: 5
+        third_party_settings: {  }
+      -
+        layout_id: layout_threecol_section
+        layout_settings:
+          label: ''
+          column_widths: 33-34-33
+          context_mapping: {  }
+        components:
+          b2c1143f-1d54-4118-94ae-3807a731dc79:
+            uuid: b2c1143f-1d54-4118-94ae-3807a731dc79
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_investissement'
+              formatter:
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+                type: number_integer
+            additional: {  }
+            weight: 1
+          836ea7de-5009-43be-8aaa-617ff4bb9a95:
+            uuid: 836ea7de-5009-43be-8aaa-617ff4bb9a95
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_benefices'
+              formatter:
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+                type: number_integer
+            additional: {  }
+            weight: 2
+          bd4775a6-915d-465a-8078-6d278b736aa4:
+            uuid: bd4775a6-915d-465a-8078-6d278b736aa4
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_superficie'
+              formatter:
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+                type: number_integer
+            additional: {  }
+            weight: 0
+          db527932-3a9a-42aa-ae5f-6cb176211bb5:
+            uuid: db527932-3a9a-42aa-ae5f-6cb176211bb5
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_nombre_de_beneficiaires_ho'
+              formatter:
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+                type: number_integer
+            additional: {  }
+            weight: 1
+          6b2d8ee7-624e-4303-b58d-d0b0eccfdcea:
+            uuid: 6b2d8ee7-624e-4303-b58d-d0b0eccfdcea
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_nombre_de_beneficiaires_fe'
+              formatter:
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+                type: number_integer
+            additional: {  }
+            weight: 0
+          e60dbee4-321a-43d2-9ac2-97cda961be63:
+            uuid: e60dbee4-321a-43d2-9ac2-97cda961be63
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_ressources_financieres'
+              formatter:
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+                type: number_integer
+            additional: {  }
+            weight: 2
+          1477910b-86ad-4079-a7c8-b43d4fd0d52b:
+            uuid: 1477910b-86ad-4079-a7c8-b43d4fd0d52b
+            region: third
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_pays'
+              formatter:
+                label: inline
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: 2
+          dbbf0453-aa7b-46e4-ac60-0c2a251bf3a7:
+            uuid: dbbf0453-aa7b-46e4-ac60-0c2a251bf3a7
+            region: third
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_nombre_d_institutions_conc'
+              formatter:
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+                type: number_integer
+            additional: {  }
+            weight: 0
+          c8f0342f-8103-463f-9723-ad5e59ace75b:
+            uuid: c8f0342f-8103-463f-9723-ad5e59ace75b
+            region: third
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:node:realisation:field_annee'
+              formatter:
+                label: inline
+                settings:
+                  thousand_separator: ''
+                  prefix_suffix: true
+                third_party_settings: {  }
+                type: number_integer
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          6c68638b-3574-4723-b592-1e5d757400cd:
+            uuid: 6c68638b-3574-4723-b592-1e5d757400cd
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:node:realisation:links'
+            additional: {  }
+            weight: 0
+        third_party_settings: {  }
+id: node.realisation.default
+targetEntityType: node
+bundle: realisation
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_annee:
+    weight: 6
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_benefices:
+    weight: 4
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: wide
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_investissement:
+    weight: 3
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_localisation:
+    weight: 13
+    label: above
+    settings:
+      output_format: wkt
+      output_escape: true
+    third_party_settings: {  }
+    type: geofield_default
+    region: content
+  field_nombre_d_institutions_conc:
+    weight: 11
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_nombre_de_beneficiaires_fe:
+    weight: 9
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_nombre_de_beneficiaires_ho:
+    weight: 8
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_pays:
+    weight: 7
+    label: inline
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ressources_financieres:
+    weight: 10
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_superficie:
+    weight: 5
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  field_type_realisation:
+    weight: 2
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 12
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_autres_lieux: true
+  langcode: true

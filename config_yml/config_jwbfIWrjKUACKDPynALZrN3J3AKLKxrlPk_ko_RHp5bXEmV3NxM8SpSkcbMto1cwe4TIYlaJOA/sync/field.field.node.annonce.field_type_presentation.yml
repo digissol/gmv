@@ -1,0 +1,23 @@
+uuid: ebdbd41d-a0f4-45b1-9ef8-cb4cfc5530b0
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_presentation
+    - node.type.annonce
+  module:
+    - options
+id: node.annonce.field_type_presentation
+field_name: field_type_presentation
+entity_type: node
+bundle: annonce
+label: 'Type de présentation'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: Présentiel
+default_value_callback: ''
+settings: {  }
+field_type: list_string

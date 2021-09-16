@@ -1,0 +1,20 @@
+uuid: 3d91a4e7-dc8a-4fd6-bedd-b6474a7fcb92
+langcode: fr
+status: true
+dependencies:
+  module:
+    - masquerade
+  theme:
+    - cleanplus
+id: masquerade
+theme: cleanplus
+region: footer
+weight: 0
+provider: null
+plugin: masquerade
+settings:
+  id: masquerade
+  label: Masquerade
+  provider: masquerade
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,165 @@
+uuid: 781f3e15-c788-437e-bde2-8c222a94a975
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.group.partenaire.field_categorie
+    - field.field.group.partenaire.field_description
+    - field.field.group.partenaire.field_domaines_d_intervention
+    - field.field.group.partenaire.field_historique
+    - field.field.group.partenaire.field_localisation
+    - field.field.group.partenaire.field_logo
+    - field.field.group.partenaire.field_nom_point_focal
+    - field.field.group.partenaire.field_objectifs
+    - field.field.group.partenaire.field_pays
+    - field.field.group.partenaire.field_strategies
+    - field.field.group.partenaire.field_thematiques
+    - group.type.partenaire
+    - image.style.thumbnail
+  module:
+    - address
+    - geofield_map
+    - image
+    - text
+id: group.partenaire.default
+targetEntityType: group
+bundle: partenaire
+mode: default
+content:
+  field_categorie:
+    weight: 9
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_domaines_d_intervention:
+    weight: 4
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_historique:
+    weight: 5
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_localisation:
+    weight: 11
+    settings:
+      map_google_places:
+        places_additional_options: ''
+        places_control: false
+      map_library: leaflet
+      map_type_google: roadmap
+      map_type_leaflet: OpenStreetMap_Mapnik
+      map_type_selector: true
+      map_dimensions:
+        width: 100%
+        height: 450px
+      zoom:
+        start: 6
+        focus: 12
+        min: 0
+        max: 22
+      geoaddress_field:
+        field: '0'
+        disabled: true
+        hidden: false
+      default_value:
+        lat: !!float 0
+        lon: !!float 0
+      click_to_find_marker: false
+      click_to_place_marker: false
+      hide_coordinates: false
+      html5_geolocation: false
+      map_google_api_key: ''
+      map_geocoder:
+        control: 0
+        settings:
+          providers: {  }
+          min_terms: 4
+          delay: 800
+          options: ''
+      zoom_level: 5
+    third_party_settings: {  }
+    type: geofield_map
+    region: content
+  field_logo:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_nom_point_focal:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_objectifs:
+    weight: 6
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_pays:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: address_country_default
+    region: content
+  field_strategies:
+    weight: 7
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_thematiques:
+    weight: 10
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  label:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  langcode: true
+  path: true
+  revision_log_message: true
+  status: true
+  uid: true

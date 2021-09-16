@@ -1,0 +1,22 @@
+uuid: f6059012-f51f-42e0-acc4-18bcacb7ca02
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.video
+id: node.video.status
+field_name: status
+entity_type: node
+bundle: video
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

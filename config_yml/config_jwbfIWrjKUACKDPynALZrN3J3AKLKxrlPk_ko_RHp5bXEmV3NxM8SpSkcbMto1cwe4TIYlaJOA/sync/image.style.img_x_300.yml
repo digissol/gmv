@@ -1,0 +1,15 @@
+uuid: a4f46740-c51e-4fcd-b259-84793465f828
+langcode: fr
+status: true
+dependencies: {  }
+name: img_x_300
+label: img_X_300
+effects:
+  8580e4a0-1485-4e7e-b640-9551922e1d58:
+    uuid: 8580e4a0-1485-4e7e-b640-9551922e1d58
+    id: image_scale
+    weight: 1
+    data:
+      width: null
+      height: 300
+      upscale: true

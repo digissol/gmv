@@ -1,0 +1,33 @@
+uuid: fc9f51a0-2cda-43b5-b190-25f9758626ae
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.inscription.body
+    - field.field.node.inscription.field_lien_d_inscription
+    - node.type.inscription
+  module:
+    - text
+    - user
+id: node.inscription.teaser
+targetEntityType: node
+bundle: inscription
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_lien_d_inscription: true
+  langcode: true

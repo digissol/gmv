@@ -1,0 +1,47 @@
+uuid: 6430f768-1472-427e-a696-19482eb8b972
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.annonce.body
+    - field.field.node.annonce.field_commentaire
+    - field.field.node.annonce.field_date
+    - field.field.node.annonce.field_date_fin
+    - field.field.node.annonce.field_image
+    - field.field.node.annonce.field_lien
+    - field.field.node.annonce.field_lieu
+    - field.field.node.annonce.field_planning
+    - field.field.node.annonce.field_type_presentation
+    - node.type.annonce
+  module:
+    - text
+    - user
+id: node.annonce.teaser
+targetEntityType: node
+bundle: annonce
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_commentaire: true
+  field_date: true
+  field_date_fin: true
+  field_image: true
+  field_lien: true
+  field_lieu: true
+  field_planning: true
+  field_type_presentation: true
+  langcode: true

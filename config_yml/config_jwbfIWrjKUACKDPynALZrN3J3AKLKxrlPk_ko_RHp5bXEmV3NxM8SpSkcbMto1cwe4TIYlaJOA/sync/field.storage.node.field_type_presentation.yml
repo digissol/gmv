@@ -1,0 +1,30 @@
+uuid: a0b56169-41bc-4119-940b-9bcb23dc3b44
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_type_presentation
+field_name: field_type_presentation
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: Présentiel
+      label: Présentiel
+    -
+      value: 'En ligne'
+      label: 'En ligne'
+    -
+      value: Mixte
+      label: Mixte
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

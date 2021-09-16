@@ -1,0 +1,15 @@
+uuid: 11940eae-e28c-4798-91c7-14709d46a8d0
+langcode: fr
+status: true
+dependencies: {  }
+name: partenaire
+label: Partenaire
+effects:
+  c7ff974a-5656-4e30-b7d6-0f6106d9d515:
+    uuid: c7ff974a-5656-4e30-b7d6-0f6106d9d515
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 600
+      anchor: center-center

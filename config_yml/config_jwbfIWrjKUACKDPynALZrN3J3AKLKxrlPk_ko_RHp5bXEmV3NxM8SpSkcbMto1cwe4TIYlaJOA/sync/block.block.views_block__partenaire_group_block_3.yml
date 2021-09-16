@@ -1,0 +1,32 @@
+uuid: c3ffc326-5d02-41cc-a7b9-529a62fb20c3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.partenaire_group
+  module:
+    - ctools
+    - views
+  theme:
+    - cleanplus
+id: views_block__partenaire_group_block_3
+theme: cleanplus
+region: content_bottom_highlighted
+weight: 0
+provider: null
+plugin: 'views_block:partenaire_group-block_3'
+settings:
+  id: 'views_block:partenaire_group-block_3'
+  label: 'Autres Organisations'
+  provider: views
+  label_display: visible
+  views_label: 'Autres Organisations'
+  items_per_page: none
+visibility:
+  'entity_bundle:group':
+    id: 'entity_bundle:group'
+    bundles:
+      partenaire: partenaire
+    negate: false
+    context_mapping:
+      group: '@group.group_route_context:group'

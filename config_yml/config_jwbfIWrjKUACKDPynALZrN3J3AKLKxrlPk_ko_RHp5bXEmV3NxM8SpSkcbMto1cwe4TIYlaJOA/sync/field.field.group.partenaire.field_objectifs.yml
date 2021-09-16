@@ -1,0 +1,21 @@
+uuid: b2a5f744-bfc4-428b-b37a-089fb5c6ccf7
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_objectifs
+    - group.type.partenaire
+  module:
+    - text
+id: group.partenaire.field_objectifs
+field_name: field_objectifs
+entity_type: group
+bundle: partenaire
+label: OBJECTIFS
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

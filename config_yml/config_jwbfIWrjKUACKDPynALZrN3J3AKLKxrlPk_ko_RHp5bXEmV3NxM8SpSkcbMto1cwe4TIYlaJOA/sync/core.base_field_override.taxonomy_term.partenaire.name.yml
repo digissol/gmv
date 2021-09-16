@@ -1,0 +1,18 @@
+uuid: efc75ead-bf01-44b1-ae10-7358a281c8e4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.partenaire
+id: taxonomy_term.partenaire.name
+field_name: name
+entity_type: taxonomy_term
+bundle: partenaire
+label: Name
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

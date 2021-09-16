@@ -1,0 +1,166 @@
+uuid: 0dc99692-94f4-400f-bfdd-8947212daea1
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_description_de_l_organisat
+    - field.field.user.user.field_liste_role
+    - field.field.user.user.field_nom
+    - field.field.user.user.field_nom_de_l_or
+    - field.field.user.user.field_pays
+    - field.field.user.user.field_prenom
+    - field.field.user.user.field_telephone
+    - field.field.user.user.user_picture
+  module:
+    - image
+    - layout_builder
+    - layout_discovery
+    - user
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          3d560eb1-238f-47be-910e-16a81ef3a080:
+            uuid: 3d560eb1-238f-47be-910e-16a81ef3a080
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:user:user:masquerade'
+            additional: {  }
+            weight: 0
+          cee60a95-6975-4521-a627-74a459f7c2e4:
+            uuid: cee60a95-6975-4521-a627-74a459f7c2e4
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:user:user:realname'
+            additional: {  }
+            weight: 1
+          8bf6ec0b-7e29-43b2-b23f-5f551a1ad93a:
+            uuid: 8bf6ec0b-7e29-43b2-b23f-5f551a1ad93a
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:user_picture'
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_style: ''
+                  image_link: ''
+                third_party_settings: {  }
+            additional: {  }
+            weight: 2
+          3bae9346-00cb-4dac-9208-bbca1e3de6bc:
+            uuid: 3bae9346-00cb-4dac-9208-bbca1e3de6bc
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:field_prenom'
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 3
+          1ae05570-6383-4310-84f1-3b1fa1578626:
+            uuid: 1ae05570-6383-4310-84f1-3b1fa1578626
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:user:user:field_nom'
+              formatter:
+                type: string
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+            additional: {  }
+            weight: 4
+          2cdb4685-6059-439b-86aa-5436da9e466c:
+            uuid: 2cdb4685-6059-439b-86aa-5436da9e466c
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:user:user:member_for'
+            additional: {  }
+            weight: 6
+        third_party_settings: {  }
+_core:
+  default_config_hash: '-cLsS3M3JycipXQt9rEb81_HxKneReoGuRh8ijcOPXs'
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  field_nom:
+    type: string
+    weight: 4
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  field_prenom:
+    type: string
+    weight: 3
+    region: content
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+  masquerade:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  member_for:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  realname:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image
+    weight: 2
+    region: content
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+hidden:
+  field_description_de_l_organisat: true
+  field_liste_role: true
+  field_nom_de_l_or: true
+  field_pays: true
+  field_telephone: true
+  langcode: true
+  profil_expert_profiles: true
+  profil_point_focal_profiles: true
+  profil_profiles: true

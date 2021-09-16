@@ -1,0 +1,9 @@
+multiple_registration_pages_white_list:
+  point_focal: point_focal
+  acteur: acteur
+  anonymous: 0
+  authenticated: 0
+  administrator: 0
+  gestionnaire: 0
+  ambassadeur: 0
+  membre: 0

@@ -1,0 +1,40 @@
+uuid: 88a1961d-2744-4c54-9f6c-32cb62c3c511
+langcode: fr
+status: true
+dependencies: {  }
+id: point_focal
+label: 'Point focal'
+weight: 4
+is_admin: null
+permissions:
+  - 'access group overview'
+  - 'access in-place editing'
+  - 'access toolbar'
+  - 'create annonce content'
+  - 'create document content'
+  - 'create documents content'
+  - 'create partenaire group'
+  - 'create photo content'
+  - 'create profil_point_focal profile'
+  - 'create projet content'
+  - 'create terms in partenaire'
+  - 'create video content'
+  - 'delete any profil_point_focal profile'
+  - 'delete own annonce content'
+  - 'delete own document content'
+  - 'delete own photo content'
+  - 'delete own profil_point_focal profile'
+  - 'delete own projet content'
+  - 'delete own video content'
+  - 'edit own annonce content'
+  - 'edit own document content'
+  - 'edit own partenaire content'
+  - 'edit own photo content'
+  - 'edit own projet content'
+  - 'edit own video content'
+  - 'edit terms in partenaire'
+  - 'update any profil_point_focal profile'
+  - 'update own profil_point_focal profile'
+  - 'use editorial transition create_new_draft'
+  - 'view own profil_point_focal profile'
+  - 'view own unpublished content'

@@ -1,0 +1,20 @@
+uuid: 7d4835e8-ebc8-472c-9cb6-03fe968eefa1
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+  enforced:
+    config:
+      - user.role.point_focal
+id: partenaire-d4463fb4b
+label: 'Point focal'
+weight: 4
+internal: true
+audience: outsider
+group_type: partenaire
+permissions_ui: false
+permissions:
+  - 'request group membership'
+  - 'view group'
+  - 'view own unpublished group'
