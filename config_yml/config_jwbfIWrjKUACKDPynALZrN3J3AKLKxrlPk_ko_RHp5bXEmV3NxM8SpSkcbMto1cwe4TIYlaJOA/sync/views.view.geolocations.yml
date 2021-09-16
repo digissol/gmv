@@ -11,6 +11,8 @@ dependencies:
     - field.storage.node.field_type_realisation
     - group.type.partenaire
     - taxonomy.vocabulary.cateegorie_partenaire
+    - taxonomy.vocabulary.realisation
+    - taxonomy.vocabulary.thematique
   module:
     - geofield
     - group
@@ -986,6 +988,111 @@ display:
           type: select
           limit: true
           vid: cateegorie_partenaire
+          hierarchy: true
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_type_realisation_target_id:
+          id: field_type_realisation_target_id
+          table: node__field_type_realisation
+          field: field_type_realisation_target_id
+          relationship: gc__node
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_type_realisation_target_id_op
+            label: 'Type de réalisation (field_type_realisation)'
+            description: ''
+            use_operator: false
+            operator: field_type_realisation_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_type_realisation_target_id
+            required: false
+            remember: false
+            multiple: true
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              gestionnaire: '0'
+              point_focal: '0'
+              acteur: '0'
+              ambassadeur: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: 'Type de réalisation (field_type_realisation)'
+            description: null
+            identifier: field_type_realisation_target_id
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items:
+              1: {  }
+              2: {  }
+              3: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: realisation
+          hierarchy: false
+          error_message: true
+          plugin_id: taxonomy_index_tid
+        field_thematiques_target_id:
+          id: field_thematiques_target_id
+          table: group__field_thematiques
+          field: field_thematiques_target_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: {  }
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_thematiques_target_id_op
+            label: 'THEMATIQUES (field_thematiques)'
+            description: ''
+            use_operator: false
+            operator: field_thematiques_target_id_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: field_thematiques_target_id
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              gestionnaire: '0'
+              point_focal: '0'
+              acteur: '0'
+              ambassadeur: '0'
+            reduce: false
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          reduce_duplicates: false
+          type: select
+          limit: true
+          vid: thematique
           hierarchy: true
           error_message: true
           plugin_id: taxonomy_index_tid
