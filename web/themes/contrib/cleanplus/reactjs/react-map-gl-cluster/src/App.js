@@ -63,6 +63,11 @@ export default function App() {
     height: "100px",
   };
 
+  let urlbase = "http://gmv/"
+  let urlbase_geolocations = urlbase + "geolocations/?_format=json"
+  let url_full_query = urlbase_geolocations //by default no filter
+  const [url_full_query_tab, seturl_full_query_tab] = useState([])
+
   const ClusterMarker = ({ longitude, latitude, pointCount }) => (
     <Marker longitude={longitude} latitude={latitude}>
       <div style={{ ...style, background: 'orange' }}>{pointCount}</div>
@@ -70,11 +75,11 @@ export default function App() {
   );
 
   //terms taxonomy partners
-  let partitems = []
-  let themaitems = [] //thematiques partenaires
+  let partitems = [{value:'', label:'Tous'}]
+  let themaitems = [{value:'', label:'Tous'}] //thematiques partenaires
   let realitems = [] // type de realisations projet
   //let urlpartner = base+'/api/taxonomy_term/cateegorie_partenaire';
-  let urlpartner = 'http://gmv/api/taxonomy_term/cateegorie_partenaire';
+  let urlpartner = urlbase + 'api/taxonomy_term/cateegorie_partenaire';
   console.log("urlpartner", urlpartner)
   const {data:partners, isPendingpartners, errorpartners} = useFetch(urlpartner);
   console.log("partners:", partners);
@@ -85,7 +90,7 @@ export default function App() {
   }
 
   //terms taxonomy realisations projets
-  let urltypereal = 'http://gmv/api/taxonomy_term/realisation';
+  let urltypereal = urlbase + 'api/taxonomy_term/realisation';
   console.log("urltypereal", urltypereal)
   const {data:typereals, isPendingtypereals, errortypereals} = useFetch(urltypereal);
   console.log("typereals:", typereals);
@@ -96,7 +101,7 @@ export default function App() {
   }
 
   //terms taxonomy thematiques partners
-  let urlthema = 'http://gmv/api/taxonomy_term/thematique';
+  let urlthema = urlbase + 'api/taxonomy_term/thematique';
   console.log("urlthema", urlthema)
   const {data:themas, isPendingthemas, errorthemas} = useFetch(urlthema);
   console.log("themas:", themas);
@@ -111,59 +116,85 @@ export default function App() {
   const [selectedOptionTypeReal, setselectedOptionTypeReal] = useState(null);
   const [selectedOptionThema, setselectedOptionThema] = useState('');
 
-  var urlbase = "http://gmv/geolocations/?_format=json"
-  const [url, setUrl] = useState(urlbase);
+  
+  const [url, setUrl] = useState(urlbase_geolocations);
 
+  // concat all strings value for each index found in the array
+  const get_full_query = ((tab_query) => {
+    console.log('tab_query', tab_query)
+    let tab_values =  []
+    Object.keys(tab_query).forEach(function(index) {
+      console.log('value', tab_query[index])
+      tab_values.push(tab_query[index])
+    });
+    console.log(" aaaaaaaaaaaaaaaaaa", tab_values.join('&'))
+    return tab_values.join('&');
+  });
+
+  //categories partners
   const handleChangeSelect = (selectedOption) => { 
-       //new url
-       var newurl = urlbase + "&field_categorie_target_id=" + selectedOption.value;
-       setUrl(newurl);
-       setselectedOption(selectedOption);
-       console.log("new url", newurl);
-        
-  };
-
-  //type realisations projet
-  const handleChangeTypeReal = (selectedOption) => { 
-       //new url
-       console.log("selected multi Option", selectedOption)
-       let joinquery = selectedOption.map( (elt, index) => {
-        console.log("selected multi Option elt", elt)
-        return `field_type_realisation_target_id\[`+index + `\]=`+elt.value;
-       });
-       console.log("selected multi Option elt", joinquery);
-       let newurl = urlbase.concat("&", joinquery.join('&'));
-       console.log("selected multi Option joinquery", newurl);
-       setUrl(newurl);
-       //setselectedOptionTypeReal(selected);
-       console.log("new url", newurl);
-        
+      let tmp_url_full_query_tab = url_full_query_tab
+      tmp_url_full_query_tab['categ_partner'] = null;
+      if (selectedOption.value)
+        tmp_url_full_query_tab['categ_partner'] = "field_categorie_target_id=" + selectedOption.value;
+      console.log("field_categorie_target_id", tmp_url_full_query_tab['categ_partner']);
+     
+      //new full url
+      let full_url = urlbase_geolocations.concat('&', get_full_query(tmp_url_full_query_tab))
+      setUrl(full_url);
+      console.log("full_url", full_url)   
+      seturl_full_query_tab(tmp_url_full_query_tab)
+      setselectedOption(selectedOption);     
   };
 
   //thematique partenaire
   const handleChangeThema = (selectedOption) => { 
-       //new url
-       var newurl = urlbase + "&field_thematique_target_id=" + selectedOption.value;
-       setUrl(newurl);
-       setselectedOptionThema(selectedOption);
-       console.log("new url", newurl);
+      let tmp_url_full_query_tab = url_full_query_tab
+      tmp_url_full_query_tab['thema_partners'] = null;
+      if (selectedOption.value)
+        tmp_url_full_query_tab['thema_partners'] = "field_thematiques_target_id=" + selectedOption.value;
+      console.log("field_thematiques_target_id", tmp_url_full_query_tab['thema_partners']);
         
+      //new full url
+      let full_url = urlbase_geolocations.concat('&', get_full_query(tmp_url_full_query_tab))
+      setUrl(full_url);
+      console.log("full_url", full_url)
+      seturl_full_query_tab(tmp_url_full_query_tab)
+      setselectedOptionThema(selectedOption);
+  };
+
+  //type realisations projet
+  const handleChangeTypeReal = (selectedOption) => { 
+      console.log("selected multi Option", selectedOption)
+      let tmp_url_full_query_tab = url_full_query_tab
+      tmp_url_full_query_tab['typereal'] = null;
+      let joinquery = []
+      if (selectedOption.length)
+      {
+        let joinquery = selectedOption.map( (elt, index) => {
+        console.log("selected multi Option elt", elt)
+        return `field_type_realisation_target_id\[`+index + `\]=`+elt.value;
+       });
+       console.log("selected multi Option elt", joinquery);
+       tmp_url_full_query_tab['typereal'] = joinquery.join('&');
+       //setselectedOptionTypeReal(selected);  
+      }  
+      console.log("url typereal", tmp_url_full_query_tab) 
+
+      //new full url
+      let full_url = urlbase_geolocations.concat('&', get_full_query(tmp_url_full_query_tab))
+      setUrl(full_url);
+      seturl_full_query_tab(tmp_url_full_query_tab)
+      console.log("full_url", full_url) 
   };
 
   const handleSubmit = () => {
     // the item selected
-    /*console.log(item);
-    const results = annonces.data.filter((annonce) => {
-        return annonce.relationships.field_affiliation.data.id.startsWith(item.id) ;
-        // Use the toLowerCase() method to make it case-insensitive
-      });
-    setFoundAnnonces(results);*/
-
-    //new url
-    url = urlbase + "&partenaire_categorie=" + selectedOption;
-    alert(url);
+    /*//new url
+    "&partenaire_categorie=" + selectedOption;
+    
     console.log("new url", url);
-    setUrl(url);
+    setUrl(url);*/
   }
   const handleNameChange = (e) => {
     const keyword = e.target.value;
