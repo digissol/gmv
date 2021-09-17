@@ -1096,6 +1096,54 @@ display:
           hierarchy: true
           error_message: true
           plugin_id: taxonomy_index_tid
+        combine:
+          id: combine
+          table: views
+          field: combine
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: allwords
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: combine_op
+            label: 'Grouper le filtre des champs'
+            description: ''
+            use_operator: false
+            operator: combine_op
+            operator_limit_selection: false
+            operator_list: {  }
+            identifier: combined_field_title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              gestionnaire: '0'
+              point_focal: '0'
+              acteur: '0'
+              ambassadeur: '0'
+            placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          fields:
+            label_1: label_1
+            title: title
+          plugin_id: combine
       sorts: {  }
       header: {  }
       footer: {  }
