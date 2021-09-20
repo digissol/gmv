@@ -1,0 +1,2 @@
+pattern: '[user:field_prenom] [user:field_nom]'
+langcode: fr

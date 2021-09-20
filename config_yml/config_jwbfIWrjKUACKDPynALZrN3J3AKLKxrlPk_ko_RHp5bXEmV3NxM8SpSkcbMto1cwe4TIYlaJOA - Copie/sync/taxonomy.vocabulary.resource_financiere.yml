@@ -1,0 +1,8 @@
+uuid: 25852fa1-e3ae-428a-8f5c-b60f198e9217
+langcode: fr
+status: true
+dependencies: {  }
+name: 'resource financière'
+vid: resource_financiere
+description: ''
+weight: 0

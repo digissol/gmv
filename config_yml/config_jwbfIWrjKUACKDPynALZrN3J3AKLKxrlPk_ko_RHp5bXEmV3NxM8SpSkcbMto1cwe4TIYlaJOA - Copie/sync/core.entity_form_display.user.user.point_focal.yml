@@ -1,0 +1,92 @@
+uuid: d61f379c-7c8c-43c6-a0ea-9b351ef734d0
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_form_mode.user.point_focal
+    - field.field.user.user.field_description_de_l_organisat
+    - field.field.user.user.field_liste_role
+    - field.field.user.user.field_nom
+    - field.field.user.user.field_nom_de_l_or
+    - field.field.user.user.field_pays
+    - field.field.user.user.field_prenom
+    - field.field.user.user.field_telephone
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - address
+    - image
+    - path
+    - telephone
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.point_focal
+targetEntityType: user
+bundle: user
+mode: point_focal
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  comment_notify_settings:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_nom:
+    type: string_textfield
+    weight: 2
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_pays:
+    type: address_country_default
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_prenom:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_telephone:
+    type: telephone_default
+    weight: 3
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    weight: 5
+    region: content
+hidden:
+  contact: true
+  field_description_de_l_organisat: true
+  field_liste_role: true
+  field_nom_de_l_or: true
+  langcode: true
+  language: true
+  profil_expert_profiles: true
+  profil_point_focal_profiles: true
+  profil_profiles: true
+  timezone: true

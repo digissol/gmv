@@ -1,0 +1,23 @@
+uuid: 24773250-8df5-4aeb-8fdd-b9a32e4b8fbf
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_nombre_de_beneficiaires_ho
+    - node.type.realisation
+id: node.realisation.field_nombre_de_beneficiaires_ho
+field_name: field_nombre_de_beneficiaires_ho
+entity_type: node
+bundle: realisation
+label: 'Nombre de bénéficiaires Homme'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

@@ -1,0 +1,23 @@
+uuid: 0e02fa34-6fe4-4ff5-b29a-1f1fd46249fd
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.annonce
+  module:
+    - text
+id: node.annonce.body
+field_name: body
+entity_type: node
+bundle: annonce
+label: Corps
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

@@ -1,0 +1,18 @@
+uuid: 421e4a34-8cbf-4d1b-9a92-e89b988e4b66
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.annonce
+id: node.annonce.title
+field_name: title
+entity_type: node
+bundle: annonce
+label: Titre
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

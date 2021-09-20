@@ -1,0 +1,14 @@
+uuid: 605ba013-3b98-4a10-a6e4-68bf82738cc2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.gestionnaire
+  module:
+    - user
+id: user_add_role_action.gestionnaire
+label: 'Ajouter le rôle Gestionnaire aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: gestionnaire

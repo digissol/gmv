@@ -1,0 +1,14 @@
+uuid: 6e245d31-b5de-4d02-9183-3888d76c89ce
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.gestionnaire
+  module:
+    - user
+id: user_remove_role_action.gestionnaire
+label: 'Enlever le rôle Gestionnaire des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: gestionnaire

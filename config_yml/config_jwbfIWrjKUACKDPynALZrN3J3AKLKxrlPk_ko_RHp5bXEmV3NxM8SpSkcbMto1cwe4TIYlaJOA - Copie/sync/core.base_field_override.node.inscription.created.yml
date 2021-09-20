@@ -1,0 +1,18 @@
+uuid: d6604a57-f1bc-4b2e-a2fb-766196b77970
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.inscription
+id: node.inscription.created
+field_name: created
+entity_type: node
+bundle: inscription
+label: 'Écrit le'
+description: 'L''heure à laquelle le nœud a été créé.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

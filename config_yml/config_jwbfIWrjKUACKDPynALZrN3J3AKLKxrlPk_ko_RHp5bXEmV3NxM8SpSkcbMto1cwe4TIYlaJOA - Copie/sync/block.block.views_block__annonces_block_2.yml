@@ -1,0 +1,29 @@
+uuid: 767a4bf7-bc53-4711-bab6-1314b781fb7b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.annonces
+  module:
+    - system
+    - views
+  theme:
+    - cleanplus
+id: views_block__annonces_block_2
+theme: cleanplus
+region: content_top_highlighted
+weight: -7
+provider: null
+plugin: 'views_block:annonces-block_2'
+settings:
+  id: 'views_block:annonces-block_2'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false

@@ -1,0 +1,38 @@
+uuid: ac61dc9c-222d-42d4-8cbc-319821967274
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.content_type.partenaire-group_node-annonce
+  module:
+    - path
+id: group_content.partenaire-group_node-annonce.default
+targetEntityType: group_content
+bundle: partenaire-group_node-annonce
+mode: default
+content:
+  entity_id:
+    type: entity_reference_autocomplete
+    weight: 5
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+      match_limit: 10
+    region: content
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  uid: true

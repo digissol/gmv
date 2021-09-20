@@ -1,0 +1,38 @@
+uuid: 41aac975-1801-4579-a0c9-8d3374fbf99d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_telephone
+  module:
+    - multiple_registration
+    - telephone
+    - telephone_validation
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form:
+      point_focal: point_focal
+      acteur: acteur
+      expert: expert
+      authenticated: 0
+    user_additional_register_form_required:
+      point_focal: point_focal
+      acteur: acteur
+      expert: expert
+      authenticated: 0
+  telephone_validation:
+    format: 0
+    country: {  }
+id: user.user.field_telephone
+field_name: field_telephone
+entity_type: user
+bundle: user
+label: Téléphone
+description: 'Saisir le numéro de téléphone précédé de l''indicatif du pays. Ex:  +221 77 765 87 56'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: telephone

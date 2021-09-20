@@ -1,0 +1,32 @@
+uuid: 985c68f4-b6a6-492a-9f79-ae8546b2d9b8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - views.view.annonces
+  module:
+    - ctools
+    - views
+  theme:
+    - cleanplus
+id: views_block__annonces_block_4
+theme: cleanplus
+region: sidebar_first
+weight: -9
+provider: null
+plugin: 'views_block:annonces-block_4'
+settings:
+  id: 'views_block:annonces-block_4'
+  label: 'Dernières Annonces'
+  provider: views
+  label_display: visible
+  views_label: 'Dernières Annonces'
+  items_per_page: none
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      annonce: annonce
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

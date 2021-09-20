@@ -1,0 +1,35 @@
+uuid: 9cea3750-09ad-4e8a-ab79-390f5ed1f87b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_pays
+  module:
+    - address
+    - multiple_registration
+    - user
+third_party_settings:
+  multiple_registration:
+    user_additional_register_form:
+      authenticated: authenticated
+      point_focal: point_focal
+      acteur: acteur
+      expert: expert
+    user_additional_register_form_required:
+      authenticated: 0
+      point_focal: 0
+      acteur: 0
+      expert: 0
+id: user.user.field_pays
+field_name: field_pays
+entity_type: user
+bundle: user
+label: Pays
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_countries: {  }
+field_type: address_country

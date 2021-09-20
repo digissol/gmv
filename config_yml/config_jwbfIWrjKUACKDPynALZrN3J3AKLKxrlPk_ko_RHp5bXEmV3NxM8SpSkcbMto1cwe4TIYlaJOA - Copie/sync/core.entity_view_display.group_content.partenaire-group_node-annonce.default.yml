@@ -1,0 +1,15 @@
+uuid: 7e21eb61-7bb5-4816-a69b-c1bebce6a8cc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.content_type.partenaire-group_node-annonce
+id: group_content.partenaire-group_node-annonce.default
+targetEntityType: group_content
+bundle: partenaire-group_node-annonce
+mode: default
+content: {  }
+hidden:
+  entity_id: true
+  langcode: true
+  uid: true

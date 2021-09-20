@@ -1,0 +1,23 @@
+uuid: 6310cc43-fe28-4d2e-95aa-f7b58b33bc79
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_investissement
+    - node.type.realisation
+id: node.realisation.field_investissement
+field_name: field_investissement
+entity_type: node
+bundle: realisation
+label: Investissement
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

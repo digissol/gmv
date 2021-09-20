@@ -1,0 +1,18 @@
+uuid: 2735c31e-7bfa-4ee9-92f6-00262e1d414f
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.photo
+id: node.photo.changed
+field_name: changed
+entity_type: node
+bundle: photo
+label: Modifié
+description: 'La date à laquelle le nœud a été modifié pour la dernière fois.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

@@ -1,0 +1,10 @@
+uuid: 6f24f7b4-0fd9-4a80-8f07-7ee555a56be0
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.expert
+label: Expert
+targetEntityType: user
+cache: true

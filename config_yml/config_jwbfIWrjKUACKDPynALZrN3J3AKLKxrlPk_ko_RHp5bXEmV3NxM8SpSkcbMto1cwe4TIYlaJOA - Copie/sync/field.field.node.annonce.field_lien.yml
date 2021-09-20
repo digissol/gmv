@@ -1,0 +1,23 @@
+uuid: 52c5b2bc-6e4f-45d1-a039-3257a7ae1156
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lien
+    - node.type.annonce
+  module:
+    - link
+id: node.annonce.field_lien
+field_name: field_lien
+entity_type: node
+bundle: annonce
+label: Lien
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 17
+  title: 1
+field_type: link

@@ -1,0 +1,44 @@
+uuid: 2a7b9a2d-16a0-4f49-8560-88613813bee4
+langcode: fr
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.taxonomy_term.full
+    - field.field.taxonomy_term.partenaire.field_domaines_d_intervention
+    - field.field.taxonomy_term.partenaire.field_email
+    - field.field.taxonomy_term.partenaire.field_historique
+    - field.field.taxonomy_term.partenaire.field_logo
+    - field.field.taxonomy_term.partenaire.field_objectifs
+    - field.field.taxonomy_term.partenaire.field_strategies
+    - taxonomy.vocabulary.partenaire
+  module:
+    - image
+    - text
+id: taxonomy_term.partenaire.full
+targetEntityType: taxonomy_term
+bundle: partenaire
+mode: full
+content:
+  description:
+    type: text_default
+    weight: 10
+    region: content
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+  field_logo:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+hidden:
+  field_domaines_d_intervention: true
+  field_email: true
+  field_historique: true
+  field_objectifs: true
+  field_strategies: true
+  langcode: true

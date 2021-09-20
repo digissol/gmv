@@ -1,0 +1,10 @@
+uuid: 855b7517-4177-4c5b-a9f6-a95fd97776f4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - user
+id: user.acteur
+label: Acteur
+targetEntityType: user
+cache: true

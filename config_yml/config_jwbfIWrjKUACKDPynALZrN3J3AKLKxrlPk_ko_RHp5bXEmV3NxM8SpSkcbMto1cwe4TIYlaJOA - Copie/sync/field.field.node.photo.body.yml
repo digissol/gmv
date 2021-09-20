@@ -1,0 +1,23 @@
+uuid: 235b72ca-4f45-477e-b72f-c3207e3501a4
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.photo
+  module:
+    - text
+id: node.photo.body
+field_name: body
+entity_type: node
+bundle: photo
+label: Corps
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

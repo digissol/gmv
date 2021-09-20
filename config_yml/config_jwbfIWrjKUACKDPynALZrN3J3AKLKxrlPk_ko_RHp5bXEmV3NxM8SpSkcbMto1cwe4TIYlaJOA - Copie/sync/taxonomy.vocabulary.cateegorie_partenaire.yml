@@ -1,0 +1,8 @@
+uuid: 901858fe-6c35-4962-b95d-21ad8139e43a
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Catégorie partenaire'
+vid: cateegorie_partenaire
+description: ''
+weight: 0

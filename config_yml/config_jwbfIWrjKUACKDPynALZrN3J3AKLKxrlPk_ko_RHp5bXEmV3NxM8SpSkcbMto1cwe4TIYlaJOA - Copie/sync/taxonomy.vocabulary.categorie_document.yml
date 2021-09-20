@@ -1,0 +1,8 @@
+uuid: 4803b533-3b38-4b9b-91a0-32a3c658117e
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Catégorie document'
+vid: categorie_document
+description: ''
+weight: 0

@@ -1,0 +1,29 @@
+uuid: f3428d22-fe31-449d-a066-5a39e99db19a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_ressource_financiere
+    - node.type.realisation
+    - taxonomy.vocabulary.resource_financiere
+id: node.realisation.field_ressource_financiere
+field_name: field_ressource_financiere
+entity_type: node
+bundle: realisation
+label: 'ressource financiere'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      resource_financiere: resource_financiere
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

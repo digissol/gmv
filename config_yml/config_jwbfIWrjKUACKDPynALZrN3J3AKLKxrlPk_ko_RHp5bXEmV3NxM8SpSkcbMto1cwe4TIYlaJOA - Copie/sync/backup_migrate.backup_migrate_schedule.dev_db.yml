@@ -1,0 +1,13 @@
+uuid: 0c24ddf5-9aee-4923-a437-ccd84cd97d45
+langcode: fr
+status: true
+dependencies: {  }
+id: dev_db
+label: 'Dev db'
+enabled: true
+keep: 100
+period: 3600
+cron: null
+source_id: default_db
+destination_id: private_files
+settings_profile_id: null

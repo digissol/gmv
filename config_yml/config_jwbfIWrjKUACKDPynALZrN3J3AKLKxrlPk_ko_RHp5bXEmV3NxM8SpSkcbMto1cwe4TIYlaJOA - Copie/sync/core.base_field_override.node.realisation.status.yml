@@ -1,0 +1,22 @@
+uuid: a9b48a60-5241-4222-92e8-f015f0497347
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.realisation
+id: node.realisation.status
+field_name: status
+entity_type: node
+bundle: realisation
+label: Published
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

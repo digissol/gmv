@@ -1,0 +1,18 @@
+uuid: ec8f66b4-65f0-4284-9af4-ef8933da2ad9
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.photo
+id: node.photo.title
+field_name: title
+entity_type: node
+bundle: photo
+label: Titre
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

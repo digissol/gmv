@@ -1,0 +1,14 @@
+uuid: 63de66f1-5c3e-426d-b1e3-6787ba57ec13
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.acteur
+  module:
+    - user
+id: user_remove_role_action.acteur
+label: 'Enlever le rôle Acteur des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: acteur

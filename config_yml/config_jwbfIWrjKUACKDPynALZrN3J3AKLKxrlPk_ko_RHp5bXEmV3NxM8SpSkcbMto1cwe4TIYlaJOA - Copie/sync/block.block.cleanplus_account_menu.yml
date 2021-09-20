@@ -1,0 +1,27 @@
+uuid: 723f6004-f6e8-4cb7-9897-e1cd5234747a
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - cleanplus
+_core:
+  default_config_hash: EzmfziTioL9Bxbr3YrtoU8Ni4r7VBsuQAnW610xbTU8
+id: cleanplus_account_menu
+theme: cleanplus
+region: header_top_highlighted_second
+weight: -41
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility: {  }

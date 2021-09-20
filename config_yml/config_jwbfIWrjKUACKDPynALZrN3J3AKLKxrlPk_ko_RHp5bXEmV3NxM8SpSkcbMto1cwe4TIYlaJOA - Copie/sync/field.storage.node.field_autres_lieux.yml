@@ -1,0 +1,19 @@
+uuid: f46b0af8-959f-4de6-9c42-f28df8ce10c6
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+    - text
+id: node.field_autres_lieux
+field_name: field_autres_lieux
+entity_type: node
+type: text_with_summary
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

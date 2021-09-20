@@ -1,0 +1,28 @@
+uuid: 574b161d-4056-4b21-8c37-0fca01cddfed
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+id: partenaire-member
+label: Membre
+weight: -100
+internal: true
+audience: member
+group_type: partenaire
+permissions_ui: true
+permissions:
+  - 'create group_node:annonce entity'
+  - 'create group_node:document entity'
+  - 'create group_node:realisation entity'
+  - 'delete own group_node:annonce entity'
+  - 'delete own group_node:document entity'
+  - 'delete own group_node:realisation entity'
+  - 'update own group_node:annonce entity'
+  - 'update own group_node:document entity'
+  - 'update own group_node:realisation entity'
+  - 'view group'
+  - 'view group_node:annonce entity'
+  - 'view group_node:document entity'
+  - 'view group_node:realisation entity'
+  - 'view unpublished group_node:annonce entity'

@@ -1,0 +1,29 @@
+uuid: 0b5f700a-9a09-423c-ba76-7fe24161a4e8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_categorie
+    - group.type.partenaire
+    - taxonomy.vocabulary.cateegorie_partenaire
+id: group.partenaire.field_categorie
+field_name: field_categorie
+entity_type: group
+bundle: partenaire
+label: CATEGORIE
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      cateegorie_partenaire: cateegorie_partenaire
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,19 @@
+uuid: 16bc8b2d-81ea-4825-a9dc-8b94f5714c4e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_lien
+field_name: field_lien
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

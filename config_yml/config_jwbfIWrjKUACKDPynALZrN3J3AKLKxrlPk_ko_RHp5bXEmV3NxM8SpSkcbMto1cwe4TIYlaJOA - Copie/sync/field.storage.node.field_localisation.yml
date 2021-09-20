@@ -1,0 +1,20 @@
+uuid: df432543-ac57-4897-b73b-cbf6fc480ffa
+langcode: fr
+status: true
+dependencies:
+  module:
+    - geofield
+    - node
+id: node.field_localisation
+field_name: field_localisation
+entity_type: node
+type: geofield
+settings:
+  backend: geofield_backend_postgis
+module: geofield
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

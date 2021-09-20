@@ -1,0 +1,19 @@
+uuid: 8c84f4b1-4c01-4741-9c2d-322d7e36b3a4
+langcode: fr
+status: true
+dependencies:
+  module:
+    - link
+    - node
+id: node.field_lien_d_inscription
+field_name: field_lien_d_inscription
+entity_type: node
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

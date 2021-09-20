@@ -1,0 +1,17 @@
+uuid: af02e389-5cde-4e25-aaf9-4f7ffd591bf1
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Vidéo
+type: video
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

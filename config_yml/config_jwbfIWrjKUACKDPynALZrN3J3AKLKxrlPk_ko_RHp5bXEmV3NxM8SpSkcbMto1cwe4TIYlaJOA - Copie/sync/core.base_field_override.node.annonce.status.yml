@@ -1,0 +1,22 @@
+uuid: 9c0fe6a1-63c5-43c9-94ab-b69ef6685a4b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.annonce
+id: node.annonce.status
+field_name: status
+entity_type: node
+bundle: annonce
+label: Published
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

@@ -1,0 +1,11 @@
+uuid: 9f045785-16a5-4462-b9db-737a37696dee
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.inscription
+id: node.inscription
+target_entity_type_id: node
+target_bundle: inscription
+default_langcode: site_default
+language_alterable: false

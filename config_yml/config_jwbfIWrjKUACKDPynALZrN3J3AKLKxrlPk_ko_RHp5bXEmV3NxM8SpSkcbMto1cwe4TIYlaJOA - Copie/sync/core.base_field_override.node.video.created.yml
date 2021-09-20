@@ -1,0 +1,18 @@
+uuid: da645b78-62e6-4b69-982c-6d5abdc1b2eb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.video
+id: node.video.created
+field_name: created
+entity_type: node
+bundle: video
+label: 'Écrit le'
+description: 'L''heure à laquelle le nœud a été créé.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

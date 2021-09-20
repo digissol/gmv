@@ -1,0 +1,72 @@
+taxonomies:
+  resource_financiere:
+    -
+      vid: resource_financiere
+      tid: '102'
+      langcode: fr
+      name: Activité
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: b39ecbd9-edca-4cb5-9b61-c68659da44e7
+    -
+      vid: resource_financiere
+      tid: '97'
+      langcode: fr
+      name: 'Aide bilatérale(pays)'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: cb8859b9-9815-4eed-a2a5-b2944c21195a
+    -
+      vid: resource_financiere
+      tid: '103'
+      langcode: fr
+      name: Autres
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 4f008a26-82c7-4f51-9803-0b3155b05a1b
+    -
+      vid: resource_financiere
+      tid: '99'
+      langcode: fr
+      name: 'Coopération décentralisé'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 09645619-c944-47a8-8fc4-b9c4a356dfbc
+    -
+      vid: resource_financiere
+      tid: '98'
+      langcode: fr
+      name: Mulilatérale
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: ec1f2dc5-6e5e-4206-97f6-de73fdd54425
+    -
+      vid: resource_financiere
+      tid: '100'
+      langcode: fr
+      name: OSC
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 258871c2-632e-4ac3-9f30-bf3029066a1d
+    -
+      vid: resource_financiere
+      tid: '101'
+      langcode: fr
+      name: 'Secteur privé'
+      description__value: null
+      description__format: null
+      weight: '0'
+      parent: '0'
+      uuid: 1063a56e-d9e1-4c63-8489-a8c79e551455

@@ -1,0 +1,416 @@
+uuid: f3160a4c-0ca6-41cc-80f2-8559f3a05d84
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.group.partenaire.field_categorie
+    - field.field.group.partenaire.field_description
+    - field.field.group.partenaire.field_domaines_d_intervention
+    - field.field.group.partenaire.field_historique
+    - field.field.group.partenaire.field_localisation
+    - field.field.group.partenaire.field_logo
+    - field.field.group.partenaire.field_nom_point_focal
+    - field.field.group.partenaire.field_objectifs
+    - field.field.group.partenaire.field_pays
+    - field.field.group.partenaire.field_strategies
+    - field.field.group.partenaire.field_thematiques
+    - group.type.partenaire
+    - views.view.annonces
+    - views.view.documents
+    - views.view.realisations
+  module:
+    - address
+    - geofield
+    - group
+    - image
+    - layout_builder
+    - layout_discovery
+    - text
+    - views
+third_party_settings:
+  layout_builder:
+    allow_custom: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          7baac265-8218-4a69-b3a2-d902bd3d5e4c:
+            uuid: 7baac265-8218-4a69-b3a2-d902bd3d5e4c
+            region: content
+            configuration:
+              id: group_operations
+              label: 'Group operations'
+              provider: group
+              label_display: '0'
+              context_mapping:
+                group: layout_builder.entity
+            additional: {  }
+            weight: 0
+          c9c9a1fa-03c9-455f-ae34-5cfeeb936fb5:
+            uuid: c9c9a1fa-03c9-455f-ae34-5cfeeb936fb5
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_localisation'
+              formatter:
+                label: above
+                settings:
+                  output_format: wkt
+                  output_escape: true
+                third_party_settings: {  }
+                type: geofield_default
+            additional: {  }
+            weight: 1
+        third_party_settings: {  }
+      -
+        layout_id: layout_threecol_section
+        layout_settings:
+          label: principal
+          column_widths: 25-50-25
+          context_mapping: {  }
+        components:
+          dee2b8a7-0e12-4a55-8538-4eac4d0e63f9:
+            uuid: dee2b8a7-0e12-4a55-8538-4eac4d0e63f9
+            region: first
+            configuration:
+              id: 'field_block:group:partenaire:field_logo'
+              label: logo
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: image
+                settings:
+                  image_style: large
+                  image_link: ''
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -10
+          79494464-c803-4eb4-8ee0-d15fc2fdd84a:
+            uuid: 79494464-c803-4eb4-8ee0-d15fc2fdd84a
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_strategies'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 4
+          c1046201-65b6-44f5-89e7-4280c062730c:
+            uuid: c1046201-65b6-44f5-89e7-4280c062730c
+            region: third
+            configuration:
+              id: 'views_block:annonces-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 0
+          c9565c07-a47a-43db-a325-f3ffaf748b94:
+            uuid: c9565c07-a47a-43db-a325-f3ffaf748b94
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_domaines_d_intervention'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: -4
+          571e306c-cfb3-4b49-bb4c-9d25867279bf:
+            uuid: 571e306c-cfb3-4b49-bb4c-9d25867279bf
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_description'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 1
+          caaa5b85-7d43-4b1e-8adb-e4a7f65ebddd:
+            uuid: caaa5b85-7d43-4b1e-8adb-e4a7f65ebddd
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_historique'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 2
+          43c8c7e0-b2d8-4cd7-a002-10b9a37d6c9e:
+            uuid: 43c8c7e0-b2d8-4cd7-a002-10b9a37d6c9e
+            region: second
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_objectifs'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 3
+          c5807a0f-d42b-4877-abcb-4fd3896a71df:
+            uuid: c5807a0f-d42b-4877-abcb-4fd3896a71df
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_nom_point_focal'
+              formatter:
+                label: above
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+                type: string
+            additional: {  }
+            weight: -8
+          4a2ea766-e75c-4e6a-abe9-f0d8dfde47ee:
+            uuid: 4a2ea766-e75c-4e6a-abe9-f0d8dfde47ee
+            region: third
+            configuration:
+              id: 'views_block:realisations-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 1
+          3f330878-cafe-49cf-a296-411ef677a807:
+            uuid: 3f330878-cafe-49cf-a296-411ef677a807
+            region: third
+            configuration:
+              id: 'views_block:documents-block_1'
+              label: ''
+              provider: views
+              label_display: visible
+              views_label: ''
+              items_per_page: none
+              context_mapping: {  }
+            additional: {  }
+            weight: 2
+          1a5b411d-671e-43b8-96c1-a8381b96640c:
+            uuid: 1a5b411d-671e-43b8-96c1-a8381b96640c
+            region: first
+            configuration:
+              id: 'field_block:group:partenaire:uid'
+              label: 'Point focal'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: visually_hidden
+                type: author
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+            additional: {  }
+            weight: -7
+          1e78be1c-0125-4e45-a52f-43fb606ad26f:
+            uuid: 1e78be1c-0125-4e45-a52f-43fb606ad26f
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_pays'
+              formatter:
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+                type: address_country_default
+            additional: {  }
+            weight: -9
+          b940f97c-defc-4d9f-8e49-b30ac299cd6f:
+            uuid: b940f97c-defc-4d9f-8e49-b30ac299cd6f
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_categorie'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: -6
+          7275d60a-9458-4281-96e2-53b11f471372:
+            uuid: 7275d60a-9458-4281-96e2-53b11f471372
+            region: first
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:group:partenaire:field_thematiques'
+              formatter:
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+                type: entity_reference_label
+            additional: {  }
+            weight: -5
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: titre
+          context_mapping: {  }
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_twocol_section
+        layout_settings:
+          label: ''
+          column_widths: 33-67
+          context_mapping: {  }
+        components: {  }
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
+id: group.partenaire.default
+targetEntityType: group
+bundle: partenaire
+mode: default
+content:
+  field_categorie:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: second
+  field_description:
+    weight: -4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_domaines_d_intervention:
+    weight: -3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_historique:
+    weight: -2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_localisation:
+    weight: 6
+    label: above
+    settings:
+      output_format: wkt
+      output_escape: true
+    third_party_settings: {  }
+    type: geofield_default
+    region: content
+  field_logo:
+    weight: 1
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_nom_point_focal:
+    weight: 2
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_objectifs:
+    weight: -1
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_pays:
+    weight: 3
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: address_country_default
+    region: second
+  field_strategies:
+    weight: 0
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_thematiques:
+    weight: 5
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: second
+  label:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  changed: true
+  created: true
+  langcode: true
+  uid: true

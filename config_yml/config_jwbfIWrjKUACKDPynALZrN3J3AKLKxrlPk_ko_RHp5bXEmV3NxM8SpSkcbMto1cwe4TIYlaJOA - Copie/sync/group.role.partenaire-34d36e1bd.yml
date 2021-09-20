@@ -1,0 +1,19 @@
+uuid: 0eb0c433-ee53-43ee-be41-9316e5606a21
+langcode: fr
+status: true
+dependencies:
+  config:
+    - group.type.partenaire
+  enforced:
+    config:
+      - user.role.acteur
+id: partenaire-34d36e1bd
+label: Acteur
+weight: 5
+internal: true
+audience: outsider
+group_type: partenaire
+permissions_ui: false
+permissions:
+  - 'request group membership'
+  - 'view group'

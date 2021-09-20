@@ -1,0 +1,21 @@
+uuid: ca49f790-4155-415e-b48e-7f592bc9f33a
+langcode: fr
+status: true
+dependencies:
+  module:
+    - group
+id: group.field_nom_point_focal
+field_name: field_nom_point_focal
+entity_type: group
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

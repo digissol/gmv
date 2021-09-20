@@ -1,0 +1,21 @@
+uuid: e469f501-af61-450b-93ef-a670538fb38d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date_fin
+    - node.type.annonce
+  module:
+    - datetime
+id: node.annonce.field_date_fin
+field_name: field_date_fin
+entity_type: node
+bundle: annonce
+label: 'Date fin'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

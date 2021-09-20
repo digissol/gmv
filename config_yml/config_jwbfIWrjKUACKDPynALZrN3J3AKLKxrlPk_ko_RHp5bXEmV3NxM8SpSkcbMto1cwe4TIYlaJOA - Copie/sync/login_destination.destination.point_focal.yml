@@ -1,0 +1,16 @@
+uuid: 202b8770-407f-49bd-91bc-1d351863dbf5
+langcode: fr
+status: true
+dependencies: {  }
+name: point_focal
+label: 'Point focal'
+triggers:
+  one-time-login: one-time-login
+roles:
+  point_focal: point_focal
+pages_type: 0
+pages: ''
+language: ''
+enabled: true
+destination_path: 'internal:/admin/structure/taxonomy/manage/partenaire/add'
+weight: 0

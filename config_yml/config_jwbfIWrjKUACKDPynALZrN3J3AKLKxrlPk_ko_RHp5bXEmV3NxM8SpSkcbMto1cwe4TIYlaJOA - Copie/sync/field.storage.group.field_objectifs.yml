@@ -1,0 +1,19 @@
+uuid: bfff9ea4-3a8e-43dd-9f0c-81698810ca1c
+langcode: fr
+status: true
+dependencies:
+  module:
+    - group
+    - text
+id: group.field_objectifs
+field_name: field_objectifs
+entity_type: group
+type: text_long
+settings: {  }
+module: text
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

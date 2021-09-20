@@ -1,0 +1,21 @@
+uuid: a0348c70-9505-421f-ae6e-bc29c00988a8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_historique
+    - taxonomy.vocabulary.partenaire
+  module:
+    - text
+id: taxonomy_term.partenaire.field_historique
+field_name: field_historique
+entity_type: taxonomy_term
+bundle: partenaire
+label: Historique
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

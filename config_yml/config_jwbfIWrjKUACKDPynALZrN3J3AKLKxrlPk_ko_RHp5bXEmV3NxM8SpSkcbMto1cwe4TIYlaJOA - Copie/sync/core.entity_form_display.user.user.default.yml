@@ -1,0 +1,160 @@
+uuid: 90367b6a-722d-4840-824a-7d6ce9a9438d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.user.user.field_description_de_l_organisat
+    - field.field.user.user.field_liste_role
+    - field.field.user.user.field_nom
+    - field.field.user.user.field_nom_de_l_or
+    - field.field.user.user.field_pays
+    - field.field.user.user.field_prenom
+    - field.field.user.user.field_telephone
+    - field.field.user.user.user_picture
+    - image.style.thumbnail
+  module:
+    - address
+    - conditional_fields
+    - image
+    - path
+    - telephone
+    - text
+    - user
+_core:
+  default_config_hash: K-1rBM8mTIkFp9RqOC2tMRUukOQ1xbRCfSKK8dEddnA
+id: user.user.default
+targetEntityType: user
+bundle: user
+mode: default
+content:
+  account:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  comment_notify_settings:
+    weight: 3
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  contact:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_description_de_l_organisat:
+    third_party_settings:
+      conditional_fields:
+        47a7d439-3454-48f8-be24-571bd291ee6f:
+          dependee: field_liste_role
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '02'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: user
+          bundle: user
+    weight: 11
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+      show_summary: false
+    type: text_textarea_with_summary
+    region: content
+  field_liste_role:
+    weight: 10
+    settings: {  }
+    third_party_settings:
+      conditional_fields: {  }
+    type: options_select
+    region: content
+  field_nom:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_nom_de_l_or:
+    third_party_settings:
+      conditional_fields:
+        47d884f2-6c26-45c8-9d42-9ac1688ed0a7:
+          dependee: field_liste_role
+          settings:
+            state: visible
+            condition: value
+            grouping: AND
+            values_set: 1
+            value: ''
+            values: {  }
+            value_form:
+              -
+                value: '02'
+            effect: show
+            effect_options: {  }
+            selector: ''
+          entity_type: user
+          bundle: user
+    weight: 12
+    settings:
+      size: 60
+      placeholder: ''
+    type: string_textfield
+    region: content
+  field_pays:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: address_country_default
+    region: content
+  field_prenom:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_telephone:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings:
+      conditional_fields: {  }
+    type: telephone_default
+    region: content
+  language:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 4
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  user_picture:
+    type: image_image
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    weight: 8
+    region: content
+hidden:
+  langcode: true
+  profil_expert_profiles: true
+  profil_point_focal_profiles: true
+  profil_profiles: true
+  timezone: true

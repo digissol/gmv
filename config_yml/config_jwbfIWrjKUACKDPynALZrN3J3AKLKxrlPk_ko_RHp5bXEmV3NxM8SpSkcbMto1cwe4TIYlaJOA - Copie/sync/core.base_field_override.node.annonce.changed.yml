@@ -1,0 +1,18 @@
+uuid: 7889ec43-dc0b-4a70-b058-d0c3c2a27c84
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.annonce
+id: node.annonce.changed
+field_name: changed
+entity_type: node
+bundle: annonce
+label: Modifié
+description: 'La date à laquelle le nœud a été modifié pour la dernière fois.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: changed

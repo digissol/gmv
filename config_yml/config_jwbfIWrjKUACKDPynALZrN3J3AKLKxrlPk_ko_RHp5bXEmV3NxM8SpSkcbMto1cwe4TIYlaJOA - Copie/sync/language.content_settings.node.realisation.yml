@@ -1,0 +1,11 @@
+uuid: 85c397de-ee7e-439f-9270-bfdb93858ac5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.realisation
+id: node.realisation
+target_entity_type_id: node
+target_bundle: realisation
+default_langcode: site_default
+language_alterable: false

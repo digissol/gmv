@@ -1,0 +1,21 @@
+uuid: e731ad5f-13d7-4963-ac59-c697783f4157
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.taxonomy_term.field_objectifs
+    - taxonomy.vocabulary.partenaire
+  module:
+    - text
+id: taxonomy_term.partenaire.field_objectifs
+field_name: field_objectifs
+entity_type: taxonomy_term
+bundle: partenaire
+label: Objectifs
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,32 @@
+uuid: f960c3cf-63ed-4fdf-9f00-7004439ed21b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.group.field_localisation
+    - group.type.partenaire
+  module:
+    - geofield
+id: group.partenaire.field_localisation
+field_name: field_localisation
+entity_type: group
+bundle: partenaire
+label: LOCALISATION
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 'POINT (-10.195313 13.581921)'
+    geo_type: Point
+    lat: 13.581921
+    lon: -10.195313
+    left: -10.195313
+    top: 13.581921
+    right: -10.195313
+    bottom: 13.581921
+    geohash: ef2trbxbrvxd
+    latlon: '13.581921,-10.195313'
+default_value_callback: ''
+settings: {  }
+field_type: geofield

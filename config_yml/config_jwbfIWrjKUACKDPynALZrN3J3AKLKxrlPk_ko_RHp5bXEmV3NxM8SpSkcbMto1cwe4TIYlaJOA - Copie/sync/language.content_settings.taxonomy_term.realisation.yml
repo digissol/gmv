@@ -1,0 +1,11 @@
+uuid: 77086550-bb7b-4f4d-9224-4dfc4d81daf5
+langcode: fr
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.realisation
+id: taxonomy_term.realisation
+target_entity_type_id: taxonomy_term
+target_bundle: realisation
+default_langcode: site_default
+language_alterable: false

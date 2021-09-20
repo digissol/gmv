@@ -1,0 +1,25 @@
+uuid: 3bb61990-7031-4f60-b653-de2235768d86
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cleanplus
+_core:
+  default_config_hash: AoZ9fWlWIwdsn00LTN9mewrgIu0nIaDL3Y2AgMH7Vj4
+id: cleanplus_branding
+theme: cleanplus
+region: header_first
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

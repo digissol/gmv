@@ -1,0 +1,23 @@
+uuid: 2c1a1577-80fe-4847-9f44-961f11307d8d
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_superficie
+    - node.type.realisation
+id: node.realisation.field_superficie
+field_name: field_superficie
+entity_type: node
+bundle: realisation
+label: 'Superficie aménagée en hectares'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

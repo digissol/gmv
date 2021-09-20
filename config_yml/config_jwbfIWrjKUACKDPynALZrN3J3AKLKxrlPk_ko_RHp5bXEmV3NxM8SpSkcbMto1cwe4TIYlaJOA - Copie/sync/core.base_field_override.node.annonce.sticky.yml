@@ -1,0 +1,22 @@
+uuid: a24e1f24-1b0b-4551-aa35-fa598e2499bc
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.annonce
+id: node.annonce.sticky
+field_name: sticky
+entity_type: node
+bundle: annonce
+label: 'Epinglé en haut des listes'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: Activé
+  off_label: Désactivé
+field_type: boolean

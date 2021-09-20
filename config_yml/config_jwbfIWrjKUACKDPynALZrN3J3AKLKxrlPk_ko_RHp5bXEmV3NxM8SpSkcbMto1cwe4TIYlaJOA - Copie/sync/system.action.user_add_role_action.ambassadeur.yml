@@ -1,0 +1,14 @@
+uuid: 50ef3d3f-ec51-416b-abef-f140ab3ff270
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.ambassadeur
+  module:
+    - user
+id: user_add_role_action.ambassadeur
+label: 'Ajouter le rôle Ambassadeur aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: ambassadeur

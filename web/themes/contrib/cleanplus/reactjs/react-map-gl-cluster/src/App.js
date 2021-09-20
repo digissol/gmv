@@ -77,6 +77,7 @@ export default function App() {
   //terms taxonomy partners
   let partitems = [{value:'', label:'Tous'}]
   let themaitems = [{value:'', label:'Tous'}] //thematiques partenaires
+  let part_resources = [{value:'', label:'Tous'}]
   let realitems = [] // type de realisations projet
   //let urlpartner = base+'/api/taxonomy_term/cateegorie_partenaire';
   let urlpartner = urlbase + 'api/taxonomy_term/cateegorie_partenaire';
@@ -110,11 +111,38 @@ export default function App() {
           themaitems.push({ value : thema.attributes.drupal_internal__tid, label: thema.attributes.name})
       ));
   }
+
+  let urlresourcesfinance = urlbase + 'api/taxonomy_term/resource_financiere';
+  //console.log("urlresourcesfinance", urlresourcesfinance)
+  const {data:resourcesfinances, isPendingresourcesfinances, errorresourcesfinances} = useFetch(urlresourcesfinance);
+  //console.log("resourcesfinances:", resourcesfinances);
+  if(resourcesfinances){
+      resourcesfinances.data.map((resourcesfinance) => (
+          part_resources.push({ value : resourcesfinance.attributes.drupal_internal__tid, label: resourcesfinance.attributes.name})
+      ));
+  }
+  //console.log("part_resources", part_resources)
   
   const [name, setName] = useState('');
+
+  //future select list as period values
+  let years_tmp = []
+  for (let i=0; i < 25 ; i++){
+    years_tmp[i] = parseFloat( new Date().getFullYear() - i);
+  }
+
+  years_tmp = years_tmp.sort();
+  let years = [{value:'Sélectionner', label:'Sélectionner'}]
+  years_tmp.forEach(function(elt) { 
+    years.push({value:elt, label:elt});
+  });
+  //console.log("years", years)
+
+  const [periode, setPeriode] = useState([{value:'', label:'Sélectionner'},{value:'', label:'Sélectionner'}]);
   const [selectedOption, setselectedOption] = useState('');
   const [selectedOptionTypeReal, setselectedOptionTypeReal] = useState(null);
   const [selectedOptionThema, setselectedOptionThema] = useState('');
+  const [selectedOptionFinance, setselectedOptionFinance] = useState('');
 
   
   const [url, setUrl] = useState(urlbase_geolocations);
@@ -127,10 +155,49 @@ export default function App() {
       //console.log('value', tab_query[index])
       tab_values.push(tab_query[index])
     });
-    //console.log(" aaaaaaaaaaaaaaaaaa", tab_values.join('&'))
     return tab_values.join('&');
   });
 
+  //filter by period between two given years. i = 0 / 1 (year_period start / end)
+  const handlePeriodFromToChange = (i) => (selectedOption) => {
+      const val = selectedOption.value;
+      console.log('selectedOption', selectedOption)
+
+      let years_period = []
+      if (i == 0)
+        years_period = [val, periode[1].value];
+      else
+        years_period = [periode[0].value, val];         
+      console.log('years_period', years_period);
+
+      //now let's generated related query search url
+      let tmp_url_full_query_tab = url_full_query_tab
+      tmp_url_full_query_tab['years_period'] = [];
+      if (years_period.length == 2){
+        tmp_url_full_query_tab['years_period'] = years_period.map((elt, index) => {
+            let eltvalue = (parseFloat(elt) > 0 ? elt : '');
+            return (index == 0 ? "field_annee_start_value=" + eltvalue  : "field_annee_end_value=" + eltvalue);
+        });
+      }
+
+      tmp_url_full_query_tab['years_period'] = tmp_url_full_query_tab['years_period'].join('&')
+      //console.log("tmp_url_full_query_tab['years_period']", tmp_url_full_query_tab['years_period']);
+     
+      //new full url
+      let full_url = urlbase_geolocations.concat('&', get_full_query(tmp_url_full_query_tab))
+      setUrl(full_url);
+      seturl_full_query_tab(tmp_url_full_query_tab)
+      console.log("full_url", full_url)   
+
+      if (i==0)
+        setPeriode([{value:val, label:val}, periode[1]]);
+      else
+        setPeriode([periode[0], {value:val, label:val}]);
+      console.log('periode', periode)
+      
+      
+  }
+ 
   //categories partners
   const handleChangeSelect = (selectedOption) => { 
       let tmp_url_full_query_tab = url_full_query_tab
@@ -188,6 +255,22 @@ export default function App() {
       console.log("full_url", full_url) 
   };
 
+  //resources financieres
+  const handleChangeFinance = (selectedOption) => { 
+      let tmp_url_full_query_tab = url_full_query_tab
+      tmp_url_full_query_tab['ressources_financieres'] = null;
+      if (selectedOption.value)
+        tmp_url_full_query_tab['ressources_financieres'] = "field_ressource_financiere_target_id=" + selectedOption.value;
+      //console.log("field_thematiques_target_id", tmp_url_full_query_tab['ressources_financieres']);
+        
+      //new full url
+      let full_url = urlbase_geolocations.concat('&', get_full_query(tmp_url_full_query_tab))
+      setUrl(full_url);
+      console.log("full_url", full_url)
+      seturl_full_query_tab(tmp_url_full_query_tab)
+      setselectedOptionFinance(selectedOption);
+  };
+
   const Option = (props) => {
   return (
     <div>
@@ -211,12 +294,12 @@ export default function App() {
   const handleOnSearch = (string, results) => {
     // onSearch will have as the first callback parameter
     // the string searched and for the second the results.
-    console.log(string, results)
+    //console.log(string, results)
   }
 
   const handleOnHover = (result) => {
     // the item hovered
-    console.log(result)
+    //console.log(result)
   }
 
   //after choosing a title of partner or project from the autocompletion search box
@@ -241,7 +324,7 @@ export default function App() {
   }
 
   const handleOnFocus = () => {
-    console.log('Focused')
+   // console.log('Focused')
   }
 
   const formatResult = (item) => {
@@ -311,14 +394,13 @@ export default function App() {
           );
 
           setGLocations(glocations_restruct);
-          console.log("gLocations.length", glocations_restruct);
+          //console.log("gLocations.length", glocations_restruct);
 
           if (!global_title_items.length && title_items.length){
             setglobal_title_items(title_items) 
-            console.log('global_title_items', global_title_items)
+            //console.log('global_title_items', global_title_items)
           }
-          else
-            console.log('hhhhhhhhhhhhh', global_title_items)
+          
         }
       )
       .catch(
@@ -330,13 +412,11 @@ export default function App() {
 
   
 return (
-  <React.StrictMode>
   <div className="carto"> 
      <div className="row filtering">       
 
-             
               <div className="col-md-3">
-               <label>Par catégorie</label>
+                  <label>Par catégorie</label>
                   <Select options={partitems}
                   value={selectedOption}
                   onChange={handleChangeSelect}
@@ -354,7 +434,7 @@ return (
               </div>
                
               <div className="col-md-3">
-              <label>Par type de réalisation</label>
+                  <label>Par type de réalisation</label>
                   <Select
                  isMulti
                   name="typerealisations"
@@ -365,10 +445,12 @@ return (
                   onChange={handleChangeTypeReal}               
                   />
               </div>
+              
               <div className="col-md-3">
                 <div className="App">
                   <header className="App-header">
                     <div style={{ width: 400 }}>
+                    <label>Rechercher</label> 
                       <ReactSearchAutocomplete
                         items={global_title_items}
                         fuseOptions={{
@@ -394,11 +476,46 @@ return (
                     </div>
                   </header>
                 </div>       
+              </div>          
+      </div>
+
+     <div className="row filtering">       
+            
+             <div className="col-md-2">    
+                
+                      <label>Période Début</label>
+                    <Select options={years}
+                      value={periode[0]}
+                      onChange={handlePeriodFromToChange(0)}
+                      placeholder="Sélectionner"
+                      />
+                
               </div>
 
+              <div className="col-md-2">
              
+                     <label>Période Fin</label>
+                    <Select options={years}
+                      value={periode[1]}
+                      onChange={handlePeriodFromToChange(1)}
+                      placeholder="Sélectionner"
+                      />
+               
+              </div>
 
+               <div className="col-md-3">
+               <label>Par ressources financiéres</label>
+                  <Select options={part_resources}
+                  value={selectedOptionFinance}
+                  onChange={handleChangeFinance}
+                  placeholder="Sélectionner"
+                  />
+              </div>
+             
+          
+             
     </div>
+
     <div className="row the_mapbox">
       <MapGL
         style={{ width: '100%', height: '400px' , marginTop: '15px'}}
@@ -456,6 +573,6 @@ return (
        
       </MapGL>
      </div> 
-    </div> 
-  </React.StrictMode>);
+    </div>
+  );
 }

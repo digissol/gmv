@@ -1,0 +1,23 @@
+uuid: cff84975-4151-422a-b5e5-5f14efa42f93
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.locations
+  module:
+    - text
+id: node.locations.body
+field_name: body
+entity_type: node
+bundle: locations
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+field_type: text_with_summary

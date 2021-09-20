@@ -1,0 +1,27 @@
+uuid: e6d77869-54bf-4d80-a0cd-3c9820244f11
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cleanplus
+_core:
+  default_config_hash: yMr4v0cRAmrSlsrxxJxEduXJR9abK3O0sxhhFKT_9ao
+id: cleanplus_breadcrumbs
+theme: cleanplus
+region: hero_top
+weight: -14
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/hero-1\r\n/blocks\r\n/slideshow-fullscreen\r\n/slideshow-boxedwidth\r\n/slideshow-fullwidth\r\n/hero-2\r\n/hero-3\r\n/hero-form\r\n/hero-4\r\n/hero-5\r\n/hero-6\r\n/hero-7"
+    negate: true
+    context_mapping: {  }

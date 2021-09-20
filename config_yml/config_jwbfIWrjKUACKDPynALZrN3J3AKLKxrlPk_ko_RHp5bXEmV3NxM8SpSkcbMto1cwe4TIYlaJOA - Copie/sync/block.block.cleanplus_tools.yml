@@ -1,0 +1,32 @@
+uuid: 183809bb-8e6a-407b-8d85-ffd165c64907
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - cleanplus
+_core:
+  default_config_hash: '-AJ1rjsO4Bdf37IaggDM0ldMI6VTVY_mpvM1Q_xDDR0'
+id: cleanplus_tools
+theme: cleanplus
+region: sidebar_second
+weight: -23
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    pages: /shortcodes
+    negate: false
+    context_mapping: {  }

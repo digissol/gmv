@@ -1,0 +1,12 @@
+uuid: 4d2614f1-f753-4d76-9551-38ec3046bf6a
+langcode: fr
+status: true
+dependencies: {  }
+id: partenaire
+label: Partenaire
+description: ''
+new_revision: false
+creator_membership: true
+creator_wizard: false
+creator_roles:
+  - partenaire-point_focal
