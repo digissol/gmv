@@ -63,10 +63,19 @@ export default function App() {
     height: "100px",
   };
 
-  let urlbase = "http://gmv/"
+  let urlbase = "http://gmv/" //TODO: to put in a setting (Drupal? or?)
   let urlbase_geolocations = urlbase + "geolocations/?_format=json"
   let url_full_query = urlbase_geolocations //by default no filter
   const [url_full_query_tab, seturl_full_query_tab] = useState([])
+
+  const whiteSpaceNumber = (num) => {
+      var gap_size = 3; //Desired distance between spaces
+      while (num.length > 0) // Loop through string
+      {
+          result = result + " " + num.substring(0,gap_size); // Insert space character
+          num = num.substring(gap_size);  // Trim String
+      }
+  };
 
   const ClusterMarker = ({ longitude, latitude, pointCount }) => (
     <Marker longitude={longitude} latitude={latitude}>
@@ -138,11 +147,43 @@ export default function App() {
   });
   //console.log("years", years)
 
+  //future select list as montant investissement
+  let default_tranche_invest = [0, 1000000, 5000000, 10000000, 50000000] //TODO: to put in a setting (Drupal? or?)
+  console.log('default_tranche_invest', default_tranche_invest)
+  let tranche_invest =  [{value:'', label:'Sélectionner'}]
+  let str_value = ''
+  let label_value = ''
+  for (let i=0; i < default_tranche_invest.length ; i++){
+    if (i < default_tranche_invest.length-1){
+      str_value = default_tranche_invest[i] 
+                  + (i==0? '':1) //case one to avoid double 00 / other cas add +1 as the starting amount value
+                  + " - " + default_tranche_invest[i+1];
+      label_value = default_tranche_invest[i].toLocaleString()  //as a label with separator for each 3 digits as for currency numbers  
+                  + (i==0? '':1) //case one to avoid double 00 / other cas add +1 as the starting amount value
+                  + " - " + default_tranche_invest[i+1].toLocaleString();
+    }
+    else{
+       str_value = (default_tranche_invest[i] + 1) + " - ";
+       label_value = "Plus de " + (default_tranche_invest[i] + 1).toLocaleString();
+    }
+    tranche_invest.push({value:str_value, label:label_value});
+  }
+
+  console.log('tranche_invest', tranche_invest)
+
+  //tranche_invest = tranche_invest.sort();
+  /*let years = [{value:'Sélectionner', label:'Sélectionner'}]
+  tranche_invest.forEach(function(elt) { 
+    years.push({value:elt, label:elt});
+  });*/
+  //console.log("years", years)
+
   const [periode, setPeriode] = useState([{value:'', label:'Sélectionner'},{value:'', label:'Sélectionner'}]);
   const [selectedOption, setselectedOption] = useState('');
   const [selectedOptionTypeReal, setselectedOptionTypeReal] = useState(null);
   const [selectedOptionThema, setselectedOptionThema] = useState('');
   const [selectedOptionFinance, setselectedOptionFinance] = useState('');
+  const [selectedOptionMontantInvest, setselectedOptionMontantInvest] = useState('');
 
   
   const [url, setUrl] = useState(urlbase_geolocations);
@@ -197,6 +238,40 @@ export default function App() {
       
       
   }
+
+  //fltre montants investissements
+  const handleChangeMontantInvest = (selectedOption) => { 
+      const val = selectedOption.value;
+      console.log('selectedOption', selectedOption)
+   
+      let tranche_invests = val.split(" - ")
+      console.log('tranche_invests', tranche_invests);
+
+      //now let's generated related query search url
+      let tmp_url_full_query_tab = url_full_query_tab
+      tmp_url_full_query_tab['tranche_invests'] = []; //reinit this part
+
+      if (val){
+        if (tranche_invests.length == 2 && tranche_invests[1] > 0){
+          tmp_url_full_query_tab['tranche_invests'] = tranche_invests.map((elt, index) => {
+              let eltvalue = (parseFloat(elt) > 0) ? parseFloat(elt) : 0;
+              return (index == 0 ? "field_investissement_value[min]=" + eltvalue  : "field_investissement_value[max]=" + eltvalue);
+          });
+        }
+        else {//case last select value
+              tmp_url_full_query_tab['tranche_invests'].push("field_investissement_value[min]=" + tranche_invests[0]);  
+        }
+
+        tmp_url_full_query_tab['tranche_invests'] = tmp_url_full_query_tab['tranche_invests'].join('&')
+        //console.log("tmp_url_full_query_tab['tranche_invests']", tmp_url_full_query_tab['tranche_invests']);
+      }
+      //new full url
+      let full_url = urlbase_geolocations.concat('&', get_full_query(tmp_url_full_query_tab))
+      setUrl(full_url);
+      seturl_full_query_tab(tmp_url_full_query_tab)
+      console.log("full_url", full_url)  
+      setselectedOptionMontantInvest(selectedOption);   
+  };
  
   //categories partners
   const handleChangeSelect = (selectedOption) => { 
@@ -204,11 +279,11 @@ export default function App() {
       tmp_url_full_query_tab['categ_partner'] = null;
       if (selectedOption.value)
         tmp_url_full_query_tab['categ_partner'] = "field_categorie_target_id=" + selectedOption.value;
-      console.log("field_categorie_target_id", tmp_url_full_query_tab['categ_partner']);
+      //console.log("field_categorie_target_id", tmp_url_full_query_tab['categ_partner']);
      
       //new full url
       let full_url = urlbase_geolocations.concat('&', get_full_query(tmp_url_full_query_tab))
-      setUrl(full_url);
+      setUrl(full_url)
       console.log("full_url", full_url)   
       seturl_full_query_tab(tmp_url_full_query_tab)
       setselectedOption(selectedOption);     
@@ -508,6 +583,15 @@ return (
                   <Select options={part_resources}
                   value={selectedOptionFinance}
                   onChange={handleChangeFinance}
+                  placeholder="Sélectionner"
+                  />
+              </div>
+
+               <div className="col-md-3">
+                  <label>Par montant d'investissement</label>
+                  <Select options={tranche_invest}
+                  value={selectedOptionMontantInvest}
+                  onChange={handleChangeMontantInvest}
                   placeholder="Sélectionner"
                   />
               </div>
